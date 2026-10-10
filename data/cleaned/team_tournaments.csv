@@ -1,0 +1,626 @@
+tournament_id,sex,team_name,team_code,played,won,drawn,lost,goals_for,goals_against,stage_rank,year,champion,finish
+WC-1930,Men,Argentina,ARG,5,4,0,1,18,9,6,1930,False,Runners-up
+WC-1930,Men,Belgium,BEL,2,0,0,2,0,4,1,1930,False,Group stage
+WC-1930,Men,Bolivia,BOL,2,0,0,2,0,8,1,1930,False,Group stage
+WC-1930,Men,Brazil,BRA,2,1,0,1,5,2,1,1930,False,Group stage
+WC-1930,Men,Chile,CHL,3,2,0,1,5,3,1,1930,False,Group stage
+WC-1930,Men,France,FRA,3,1,0,2,4,3,1,1930,False,Group stage
+WC-1930,Men,Mexico,MEX,3,0,0,3,4,13,1,1930,False,Group stage
+WC-1930,Men,Paraguay,PRY,2,1,0,1,1,3,1,1930,False,Group stage
+WC-1930,Men,Peru,PER,2,0,0,2,1,4,1,1930,False,Group stage
+WC-1930,Men,Romania,ROU,2,1,0,1,3,5,1,1930,False,Group stage
+WC-1930,Men,United States,USA,3,2,0,1,7,6,5,1930,False,Semi-finals
+WC-1930,Men,Uruguay,URY,4,4,0,0,15,3,6,1930,True,Champions
+WC-1930,Men,Yugoslavia,YUG,3,2,0,1,7,7,5,1930,False,Semi-finals
+WC-1934,Men,Argentina,ARG,1,0,0,1,2,3,3,1934,False,Round of 16
+WC-1934,Men,Austria,AUT,4,2,0,2,7,7,5,1934,False,Semi-finals
+WC-1934,Men,Belgium,BEL,1,0,0,1,2,5,3,1934,False,Round of 16
+WC-1934,Men,Brazil,BRA,1,0,0,1,1,3,3,1934,False,Round of 16
+WC-1934,Men,Czechoslovakia,CSK,4,3,0,1,9,6,6,1934,False,Runners-up
+WC-1934,Men,Egypt,EGY,1,0,0,1,2,4,3,1934,False,Round of 16
+WC-1934,Men,France,FRA,1,0,0,1,2,3,3,1934,False,Round of 16
+WC-1934,Men,Germany,DEU,4,3,0,1,11,8,5,1934,False,Semi-finals
+WC-1934,Men,Hungary,HUN,2,1,0,1,5,4,4,1934,False,Quarter-finals
+WC-1934,Men,Italy,ITA,5,4,1,0,12,3,6,1934,True,Champions
+WC-1934,Men,Netherlands,NLD,1,0,0,1,2,3,3,1934,False,Round of 16
+WC-1934,Men,Romania,ROU,1,0,0,1,1,2,3,1934,False,Round of 16
+WC-1934,Men,Spain,ESP,3,1,1,1,4,3,4,1934,False,Quarter-finals
+WC-1934,Men,Sweden,SWE,2,1,0,1,4,4,4,1934,False,Quarter-finals
+WC-1934,Men,Switzerland,CHE,2,1,0,1,5,5,4,1934,False,Quarter-finals
+WC-1934,Men,United States,USA,1,0,0,1,1,7,3,1934,False,Round of 16
+WC-1938,Men,Belgium,BEL,1,0,0,1,1,3,3,1938,False,Round of 16
+WC-1938,Men,Brazil,BRA,5,3,1,1,14,11,5,1938,False,Semi-finals
+WC-1938,Men,Cuba,CUB,3,1,1,1,5,12,4,1938,False,Quarter-finals
+WC-1938,Men,Czechoslovakia,CSK,3,1,1,1,5,3,4,1938,False,Quarter-finals
+WC-1938,Men,Dutch East Indies,IDN,1,0,0,1,0,6,3,1938,False,Round of 16
+WC-1938,Men,France,FRA,2,1,0,1,4,4,4,1938,False,Quarter-finals
+WC-1938,Men,Germany,DEU,2,0,1,1,3,5,3,1938,False,Round of 16
+WC-1938,Men,Hungary,HUN,4,3,0,1,15,5,6,1938,False,Runners-up
+WC-1938,Men,Italy,ITA,4,4,0,0,11,5,6,1938,True,Champions
+WC-1938,Men,Netherlands,NLD,1,0,0,1,0,3,3,1938,False,Round of 16
+WC-1938,Men,Norway,NOR,1,0,0,1,1,2,3,1938,False,Round of 16
+WC-1938,Men,Poland,POL,1,0,0,1,5,6,3,1938,False,Round of 16
+WC-1938,Men,Romania,ROU,2,0,1,1,4,5,3,1938,False,Round of 16
+WC-1938,Men,Sweden,SWE,3,1,0,2,11,9,5,1938,False,Semi-finals
+WC-1938,Men,Switzerland,CHE,3,1,1,1,5,5,4,1938,False,Quarter-finals
+WC-1950,Men,Bolivia,BOL,1,0,0,1,0,8,1,1950,False,Group stage
+WC-1950,Men,Brazil,BRA,6,4,1,1,22,6,5,1950,False,Semi-finals
+WC-1950,Men,Chile,CHL,3,1,0,2,5,6,1,1950,False,Group stage
+WC-1950,Men,England,ENG,3,1,0,2,2,2,1,1950,False,Group stage
+WC-1950,Men,Italy,ITA,2,1,0,1,4,3,1,1950,False,Group stage
+WC-1950,Men,Mexico,MEX,3,0,0,3,2,10,1,1950,False,Group stage
+WC-1950,Men,Paraguay,PRY,2,0,1,1,2,4,1,1950,False,Group stage
+WC-1950,Men,Spain,ESP,6,3,1,2,10,12,5,1950,False,Semi-finals
+WC-1950,Men,Sweden,SWE,5,2,1,2,11,15,5,1950,False,Semi-finals
+WC-1950,Men,Switzerland,CHE,3,1,1,1,4,6,1,1950,False,Group stage
+WC-1950,Men,United States,USA,3,1,0,2,4,8,1,1950,False,Group stage
+WC-1950,Men,Uruguay,URY,4,3,1,0,15,5,5,1950,True,Champions
+WC-1950,Men,Yugoslavia,YUG,3,2,0,1,7,3,1,1950,False,Group stage
+WC-1954,Men,Austria,AUT,5,4,0,1,17,12,5,1954,False,Semi-finals
+WC-1954,Men,Belgium,BEL,2,0,1,1,5,8,1,1954,False,Group stage
+WC-1954,Men,Brazil,BRA,3,1,1,1,8,5,4,1954,False,Quarter-finals
+WC-1954,Men,Czechoslovakia,CSK,2,0,0,2,0,7,1,1954,False,Group stage
+WC-1954,Men,England,ENG,3,1,1,1,8,8,4,1954,False,Quarter-finals
+WC-1954,Men,France,FRA,2,1,0,1,3,3,1,1954,False,Group stage
+WC-1954,Men,Hungary,HUN,5,4,0,1,27,10,6,1954,False,Runners-up
+WC-1954,Men,Italy,ITA,3,1,0,2,6,7,1,1954,False,Group stage
+WC-1954,Men,Mexico,MEX,2,0,0,2,2,8,1,1954,False,Group stage
+WC-1954,Men,Scotland,SCO,2,0,0,2,0,8,1,1954,False,Group stage
+WC-1954,Men,South Korea,KOR,2,0,0,2,0,16,1,1954,False,Group stage
+WC-1954,Men,Switzerland,CHE,4,2,0,2,11,11,4,1954,False,Quarter-finals
+WC-1954,Men,Turkey,TUR,3,1,0,2,10,11,1,1954,False,Group stage
+WC-1954,Men,Uruguay,URY,5,3,0,2,16,9,5,1954,False,Semi-finals
+WC-1954,Men,West Germany,DEU,6,5,0,1,25,14,6,1954,True,Champions
+WC-1954,Men,Yugoslavia,YUG,3,1,1,1,2,3,4,1954,False,Quarter-finals
+WC-1958,Men,Argentina,ARG,3,1,0,2,5,10,1,1958,False,Group stage
+WC-1958,Men,Austria,AUT,3,0,1,2,2,7,1,1958,False,Group stage
+WC-1958,Men,Brazil,BRA,6,5,1,0,16,4,6,1958,True,Champions
+WC-1958,Men,Czechoslovakia,CSK,4,1,1,2,9,6,1,1958,False,Group stage
+WC-1958,Men,England,ENG,4,0,3,1,4,5,1,1958,False,Group stage
+WC-1958,Men,France,FRA,6,4,0,2,23,15,5,1958,False,Semi-finals
+WC-1958,Men,Hungary,HUN,4,1,1,2,7,5,1,1958,False,Group stage
+WC-1958,Men,Mexico,MEX,3,0,1,2,1,8,1,1958,False,Group stage
+WC-1958,Men,Northern Ireland,NIR,5,2,1,2,6,10,4,1958,False,Quarter-finals
+WC-1958,Men,Paraguay,PRY,3,1,1,1,9,12,1,1958,False,Group stage
+WC-1958,Men,Scotland,SCO,3,0,1,2,4,6,1,1958,False,Group stage
+WC-1958,Men,Soviet Union,SUN,5,2,1,2,5,6,4,1958,False,Quarter-finals
+WC-1958,Men,Sweden,SWE,6,4,1,1,12,7,6,1958,False,Runners-up
+WC-1958,Men,Wales,WAL,5,1,3,1,4,4,4,1958,False,Quarter-finals
+WC-1958,Men,West Germany,DEU,6,2,2,2,12,14,5,1958,False,Semi-finals
+WC-1958,Men,Yugoslavia,YUG,4,1,2,1,7,7,4,1958,False,Quarter-finals
+WC-1962,Men,Argentina,ARG,3,1,1,1,2,3,1,1962,False,Group stage
+WC-1962,Men,Brazil,BRA,6,5,1,0,14,5,6,1962,True,Champions
+WC-1962,Men,Bulgaria,BGR,3,0,1,2,1,7,1,1962,False,Group stage
+WC-1962,Men,Chile,CHL,6,4,0,2,10,8,5,1962,False,Semi-finals
+WC-1962,Men,Colombia,COL,3,0,1,2,5,11,1,1962,False,Group stage
+WC-1962,Men,Czechoslovakia,CSK,6,3,1,2,7,7,6,1962,False,Runners-up
+WC-1962,Men,England,ENG,4,1,1,2,5,6,4,1962,False,Quarter-finals
+WC-1962,Men,Hungary,HUN,4,2,1,1,8,3,4,1962,False,Quarter-finals
+WC-1962,Men,Italy,ITA,3,1,1,1,3,2,1,1962,False,Group stage
+WC-1962,Men,Mexico,MEX,3,1,0,2,3,4,1,1962,False,Group stage
+WC-1962,Men,Soviet Union,SUN,4,2,1,1,9,7,4,1962,False,Quarter-finals
+WC-1962,Men,Spain,ESP,3,1,0,2,2,3,1,1962,False,Group stage
+WC-1962,Men,Switzerland,CHE,3,0,0,3,2,8,1,1962,False,Group stage
+WC-1962,Men,Uruguay,URY,3,1,0,2,4,6,1,1962,False,Group stage
+WC-1962,Men,West Germany,DEU,4,2,1,1,4,2,4,1962,False,Quarter-finals
+WC-1962,Men,Yugoslavia,YUG,6,3,0,3,10,7,5,1962,False,Semi-finals
+WC-1966,Men,Argentina,ARG,4,2,1,1,4,2,4,1966,False,Quarter-finals
+WC-1966,Men,Brazil,BRA,3,1,0,2,4,6,1,1966,False,Group stage
+WC-1966,Men,Bulgaria,BGR,3,0,0,3,1,8,1,1966,False,Group stage
+WC-1966,Men,Chile,CHL,3,0,1,2,2,5,1,1966,False,Group stage
+WC-1966,Men,England,ENG,6,5,1,0,11,3,6,1966,True,Champions
+WC-1966,Men,France,FRA,3,0,1,2,2,5,1,1966,False,Group stage
+WC-1966,Men,Hungary,HUN,4,2,0,2,8,7,4,1966,False,Quarter-finals
+WC-1966,Men,Italy,ITA,3,1,0,2,2,2,1,1966,False,Group stage
+WC-1966,Men,Mexico,MEX,3,0,2,1,1,3,1,1966,False,Group stage
+WC-1966,Men,North Korea,PRK,4,1,1,2,5,9,4,1966,False,Quarter-finals
+WC-1966,Men,Portugal,PRT,6,5,0,1,17,8,5,1966,False,Semi-finals
+WC-1966,Men,Soviet Union,SUN,6,4,0,2,10,6,5,1966,False,Semi-finals
+WC-1966,Men,Spain,ESP,3,1,0,2,4,5,1,1966,False,Group stage
+WC-1966,Men,Switzerland,CHE,3,0,0,3,1,9,1,1966,False,Group stage
+WC-1966,Men,Uruguay,URY,4,1,2,1,2,5,4,1966,False,Quarter-finals
+WC-1966,Men,West Germany,DEU,6,4,1,1,15,6,6,1966,False,Runners-up
+WC-1970,Men,Belgium,BEL,3,1,0,2,4,5,1,1970,False,Group stage
+WC-1970,Men,Brazil,BRA,6,6,0,0,19,7,6,1970,True,Champions
+WC-1970,Men,Bulgaria,BGR,3,0,1,2,5,9,1,1970,False,Group stage
+WC-1970,Men,Czechoslovakia,CSK,3,0,0,3,2,7,1,1970,False,Group stage
+WC-1970,Men,El Salvador,SLV,3,0,0,3,0,9,1,1970,False,Group stage
+WC-1970,Men,England,ENG,4,2,0,2,4,4,4,1970,False,Quarter-finals
+WC-1970,Men,Israel,ISR,3,0,2,1,1,3,1,1970,False,Group stage
+WC-1970,Men,Italy,ITA,6,3,2,1,10,8,6,1970,False,Runners-up
+WC-1970,Men,Mexico,MEX,4,2,1,1,6,4,4,1970,False,Quarter-finals
+WC-1970,Men,Morocco,MAR,3,0,1,2,2,6,1,1970,False,Group stage
+WC-1970,Men,Peru,PER,4,2,0,2,9,9,4,1970,False,Quarter-finals
+WC-1970,Men,Romania,ROU,3,1,0,2,4,5,1,1970,False,Group stage
+WC-1970,Men,Soviet Union,SUN,4,2,1,1,6,2,4,1970,False,Quarter-finals
+WC-1970,Men,Sweden,SWE,3,1,1,1,2,2,1,1970,False,Group stage
+WC-1970,Men,Uruguay,URY,6,2,1,3,4,5,5,1970,False,Semi-finals
+WC-1970,Men,West Germany,DEU,6,5,0,1,17,10,5,1970,False,Semi-finals
+WC-1974,Men,Argentina,ARG,6,1,2,3,9,12,2,1974,False,Second round
+WC-1974,Men,Australia,AUS,3,0,1,2,0,5,1,1974,False,Group stage
+WC-1974,Men,Brazil,BRA,7,3,2,2,6,4,5,1974,False,Semi-finals
+WC-1974,Men,Bulgaria,BGR,3,0,2,1,2,5,1,1974,False,Group stage
+WC-1974,Men,Chile,CHL,3,0,2,1,1,2,1,1974,False,Group stage
+WC-1974,Men,East Germany,DDR,6,2,2,2,5,5,2,1974,False,Second round
+WC-1974,Men,Haiti,HTI,3,0,0,3,2,14,1,1974,False,Group stage
+WC-1974,Men,Italy,ITA,3,1,1,1,5,4,1,1974,False,Group stage
+WC-1974,Men,Netherlands,NLD,7,5,1,1,15,3,6,1974,False,Runners-up
+WC-1974,Men,Poland,POL,7,6,0,1,16,5,5,1974,False,Semi-finals
+WC-1974,Men,Scotland,SCO,3,1,2,0,3,1,1,1974,False,Group stage
+WC-1974,Men,Sweden,SWE,6,2,2,2,7,6,2,1974,False,Second round
+WC-1974,Men,Uruguay,URY,3,0,1,2,1,6,1,1974,False,Group stage
+WC-1974,Men,West Germany,DEU,7,6,0,1,13,4,6,1974,True,Champions
+WC-1974,Men,Yugoslavia,YUG,6,1,2,3,12,7,2,1974,False,Second round
+WC-1974,Men,Zaire,COD,3,0,0,3,0,14,1,1974,False,Group stage
+WC-1978,Men,Argentina,ARG,7,5,1,1,15,4,6,1978,True,Champions
+WC-1978,Men,Austria,AUT,6,3,0,3,7,10,2,1978,False,Second round
+WC-1978,Men,Brazil,BRA,7,4,3,0,10,3,5,1978,False,Semi-finals
+WC-1978,Men,France,FRA,3,1,0,2,5,5,1,1978,False,Group stage
+WC-1978,Men,Hungary,HUN,3,0,0,3,3,8,1,1978,False,Group stage
+WC-1978,Men,Iran,IRN,3,0,1,2,2,8,1,1978,False,Group stage
+WC-1978,Men,Italy,ITA,7,4,1,2,9,6,5,1978,False,Semi-finals
+WC-1978,Men,Mexico,MEX,3,0,0,3,2,12,1,1978,False,Group stage
+WC-1978,Men,Netherlands,NLD,7,3,2,2,15,10,6,1978,False,Runners-up
+WC-1978,Men,Peru,PER,6,2,1,3,7,12,2,1978,False,Second round
+WC-1978,Men,Poland,POL,6,3,1,2,6,6,2,1978,False,Second round
+WC-1978,Men,Scotland,SCO,3,1,1,1,5,6,1,1978,False,Group stage
+WC-1978,Men,Spain,ESP,3,1,1,1,2,2,1,1978,False,Group stage
+WC-1978,Men,Sweden,SWE,3,0,1,2,1,3,1,1978,False,Group stage
+WC-1978,Men,Tunisia,TUN,3,1,1,1,3,2,1,1978,False,Group stage
+WC-1978,Men,West Germany,DEU,6,1,4,1,10,5,2,1978,False,Second round
+WC-1982,Men,Algeria,DZA,3,2,0,1,5,5,1,1982,False,Group stage
+WC-1982,Men,Argentina,ARG,5,2,0,3,8,7,2,1982,False,Second round
+WC-1982,Men,Austria,AUT,5,2,1,2,5,4,2,1982,False,Second round
+WC-1982,Men,Belgium,BEL,5,2,1,2,3,5,2,1982,False,Second round
+WC-1982,Men,Brazil,BRA,5,4,0,1,15,6,2,1982,False,Second round
+WC-1982,Men,Cameroon,CMR,3,0,3,0,1,1,1,1982,False,Group stage
+WC-1982,Men,Chile,CHL,3,0,0,3,3,8,1,1982,False,Group stage
+WC-1982,Men,Czechoslovakia,CSK,3,0,2,1,2,4,1,1982,False,Group stage
+WC-1982,Men,El Salvador,SLV,3,0,0,3,1,13,1,1982,False,Group stage
+WC-1982,Men,England,ENG,5,3,2,0,6,1,2,1982,False,Second round
+WC-1982,Men,France,FRA,7,3,1,3,16,12,5,1982,False,Semi-finals
+WC-1982,Men,Honduras,HND,3,0,2,1,2,3,1,1982,False,Group stage
+WC-1982,Men,Hungary,HUN,3,1,1,1,12,6,1,1982,False,Group stage
+WC-1982,Men,Italy,ITA,7,4,3,0,12,6,6,1982,True,Champions
+WC-1982,Men,Kuwait,KWT,3,0,1,2,2,6,1,1982,False,Group stage
+WC-1982,Men,New Zealand,NZL,3,0,0,3,2,12,1,1982,False,Group stage
+WC-1982,Men,Northern Ireland,NIR,5,1,3,1,5,7,2,1982,False,Second round
+WC-1982,Men,Peru,PER,3,0,2,1,2,6,1,1982,False,Group stage
+WC-1982,Men,Poland,POL,7,3,3,1,11,5,5,1982,False,Semi-finals
+WC-1982,Men,Scotland,SCO,3,1,1,1,8,8,1,1982,False,Group stage
+WC-1982,Men,Soviet Union,SUN,5,2,2,1,7,4,2,1982,False,Second round
+WC-1982,Men,Spain,ESP,5,1,2,2,4,5,2,1982,False,Second round
+WC-1982,Men,West Germany,DEU,7,4,1,2,12,10,6,1982,False,Runners-up
+WC-1982,Men,Yugoslavia,YUG,3,1,1,1,2,2,1,1982,False,Group stage
+WC-1986,Men,Algeria,DZA,3,0,1,2,1,5,1,1986,False,Group stage
+WC-1986,Men,Argentina,ARG,7,6,1,0,14,5,6,1986,True,Champions
+WC-1986,Men,Belgium,BEL,7,3,1,3,12,15,5,1986,False,Semi-finals
+WC-1986,Men,Brazil,BRA,5,4,0,1,10,1,4,1986,False,Quarter-finals
+WC-1986,Men,Bulgaria,BGR,4,0,2,2,2,6,3,1986,False,Round of 16
+WC-1986,Men,Canada,CAN,3,0,0,3,0,5,1,1986,False,Group stage
+WC-1986,Men,Denmark,DNK,4,3,0,1,10,6,3,1986,False,Round of 16
+WC-1986,Men,England,ENG,5,2,1,2,7,3,4,1986,False,Quarter-finals
+WC-1986,Men,France,FRA,7,5,1,1,12,6,5,1986,False,Semi-finals
+WC-1986,Men,Hungary,HUN,3,1,0,2,2,9,1,1986,False,Group stage
+WC-1986,Men,Iraq,IRQ,3,0,0,3,1,4,1,1986,False,Group stage
+WC-1986,Men,Italy,ITA,4,1,2,1,5,6,3,1986,False,Round of 16
+WC-1986,Men,Mexico,MEX,5,3,1,1,6,2,4,1986,False,Quarter-finals
+WC-1986,Men,Morocco,MAR,4,1,2,1,3,2,3,1986,False,Round of 16
+WC-1986,Men,Northern Ireland,NIR,3,0,1,2,2,6,1,1986,False,Group stage
+WC-1986,Men,Paraguay,PRY,4,1,2,1,4,6,3,1986,False,Round of 16
+WC-1986,Men,Poland,POL,4,1,1,2,1,7,3,1986,False,Round of 16
+WC-1986,Men,Portugal,PRT,3,1,0,2,2,4,1,1986,False,Group stage
+WC-1986,Men,Scotland,SCO,3,0,1,2,1,3,1,1986,False,Group stage
+WC-1986,Men,South Korea,KOR,3,0,1,2,4,7,1,1986,False,Group stage
+WC-1986,Men,Soviet Union,SUN,4,2,1,1,12,5,3,1986,False,Round of 16
+WC-1986,Men,Spain,ESP,5,3,0,2,11,4,4,1986,False,Quarter-finals
+WC-1986,Men,Uruguay,URY,4,0,2,2,2,8,3,1986,False,Round of 16
+WC-1986,Men,West Germany,DEU,7,4,1,2,8,7,6,1986,False,Runners-up
+WC-1990,Men,Argentina,ARG,7,4,1,2,5,4,6,1990,False,Runners-up
+WC-1990,Men,Austria,AUT,3,1,0,2,2,3,1,1990,False,Group stage
+WC-1990,Men,Belgium,BEL,4,2,0,2,6,4,3,1990,False,Round of 16
+WC-1990,Men,Brazil,BRA,4,3,0,1,4,2,3,1990,False,Round of 16
+WC-1990,Men,Cameroon,CMR,5,3,0,2,7,9,4,1990,False,Quarter-finals
+WC-1990,Men,Colombia,COL,4,1,1,2,4,4,3,1990,False,Round of 16
+WC-1990,Men,Costa Rica,CRI,4,2,0,2,4,6,3,1990,False,Round of 16
+WC-1990,Men,Czechoslovakia,CSK,5,3,0,2,10,5,4,1990,False,Quarter-finals
+WC-1990,Men,Egypt,EGY,3,0,2,1,1,2,1,1990,False,Group stage
+WC-1990,Men,England,ENG,7,3,2,2,8,6,5,1990,False,Semi-finals
+WC-1990,Men,Italy,ITA,7,6,0,1,10,2,5,1990,False,Semi-finals
+WC-1990,Men,Netherlands,NLD,4,0,3,1,3,4,3,1990,False,Round of 16
+WC-1990,Men,Republic of Ireland,IRL,5,1,3,1,2,3,4,1990,False,Quarter-finals
+WC-1990,Men,Romania,ROU,4,1,1,2,4,3,3,1990,False,Round of 16
+WC-1990,Men,Scotland,SCO,3,1,0,2,2,3,1,1990,False,Group stage
+WC-1990,Men,South Korea,KOR,3,0,0,3,1,6,1,1990,False,Group stage
+WC-1990,Men,Soviet Union,SUN,3,1,0,2,4,4,1,1990,False,Group stage
+WC-1990,Men,Spain,ESP,4,2,1,1,6,4,3,1990,False,Round of 16
+WC-1990,Men,Sweden,SWE,3,0,0,3,3,6,1,1990,False,Group stage
+WC-1990,Men,United Arab Emirates,ARE,3,0,0,3,2,11,1,1990,False,Group stage
+WC-1990,Men,United States,USA,3,0,0,3,2,8,1,1990,False,Group stage
+WC-1990,Men,Uruguay,URY,4,1,1,2,2,5,3,1990,False,Round of 16
+WC-1990,Men,West Germany,DEU,7,6,1,0,15,5,6,1990,True,Champions
+WC-1990,Men,Yugoslavia,YUG,5,3,0,2,8,6,4,1990,False,Quarter-finals
+WC-1991,Women,Brazil,BRA,3,1,0,2,1,7,1,1991,False,Group stage
+WC-1991,Women,China,CHN,4,2,1,1,10,4,4,1991,False,Quarter-finals
+WC-1991,Women,Chinese Taipei,TWN,4,1,0,3,2,15,4,1991,False,Quarter-finals
+WC-1991,Women,Denmark,DNK,4,1,1,2,7,6,4,1991,False,Quarter-finals
+WC-1991,Women,Germany,DEU,6,4,0,2,13,10,5,1991,False,Semi-finals
+WC-1991,Women,Italy,ITA,4,2,0,2,8,5,4,1991,False,Quarter-finals
+WC-1991,Women,Japan,JPN,3,0,0,3,0,12,1,1991,False,Group stage
+WC-1991,Women,New Zealand,NZL,3,0,0,3,1,11,1,1991,False,Group stage
+WC-1991,Women,Nigeria,NGA,3,0,0,3,0,7,1,1991,False,Group stage
+WC-1991,Women,Norway,NOR,6,4,0,2,14,10,6,1991,False,Runners-up
+WC-1991,Women,Sweden,SWE,6,4,0,2,18,7,5,1991,False,Semi-finals
+WC-1991,Women,United States,USA,6,6,0,0,25,5,6,1991,True,Champions
+WC-1994,Men,Argentina,ARG,4,2,0,2,8,6,3,1994,False,Round of 16
+WC-1994,Men,Belgium,BEL,4,2,0,2,4,4,3,1994,False,Round of 16
+WC-1994,Men,Bolivia,BOL,3,0,1,2,1,4,1,1994,False,Group stage
+WC-1994,Men,Brazil,BRA,7,6,1,0,11,3,6,1994,True,Champions
+WC-1994,Men,Bulgaria,BGR,7,4,0,3,10,11,5,1994,False,Semi-finals
+WC-1994,Men,Cameroon,CMR,3,0,1,2,3,11,1,1994,False,Group stage
+WC-1994,Men,Colombia,COL,3,1,0,2,4,5,1,1994,False,Group stage
+WC-1994,Men,Germany,DEU,5,3,1,1,9,7,4,1994,False,Quarter-finals
+WC-1994,Men,Greece,GRC,3,0,0,3,0,10,1,1994,False,Group stage
+WC-1994,Men,Italy,ITA,7,4,1,2,8,5,6,1994,False,Runners-up
+WC-1994,Men,Mexico,MEX,4,1,1,2,4,4,3,1994,False,Round of 16
+WC-1994,Men,Morocco,MAR,3,0,0,3,2,5,1,1994,False,Group stage
+WC-1994,Men,Netherlands,NLD,5,3,0,2,8,6,4,1994,False,Quarter-finals
+WC-1994,Men,Nigeria,NGA,4,2,0,2,7,4,3,1994,False,Round of 16
+WC-1994,Men,Norway,NOR,3,1,1,1,1,1,1,1994,False,Group stage
+WC-1994,Men,Republic of Ireland,IRL,4,1,1,2,2,4,3,1994,False,Round of 16
+WC-1994,Men,Romania,ROU,5,3,0,2,10,9,4,1994,False,Quarter-finals
+WC-1994,Men,Russia,RUS,3,1,0,2,7,6,1,1994,False,Group stage
+WC-1994,Men,Saudi Arabia,SAU,4,2,0,2,5,6,3,1994,False,Round of 16
+WC-1994,Men,South Korea,KOR,3,0,2,1,4,5,1,1994,False,Group stage
+WC-1994,Men,Spain,ESP,5,2,2,1,10,6,4,1994,False,Quarter-finals
+WC-1994,Men,Sweden,SWE,7,4,2,1,15,8,5,1994,False,Semi-finals
+WC-1994,Men,Switzerland,CHE,4,1,1,2,5,7,3,1994,False,Round of 16
+WC-1994,Men,United States,USA,4,1,1,2,3,4,3,1994,False,Round of 16
+WC-1995,Women,Australia,AUS,3,0,0,3,3,13,1,1995,False,Group stage
+WC-1995,Women,Brazil,BRA,3,1,0,2,3,8,1,1995,False,Group stage
+WC-1995,Women,Canada,CAN,3,0,1,2,5,13,1,1995,False,Group stage
+WC-1995,Women,China,CHN,6,3,1,2,11,10,5,1995,False,Semi-finals
+WC-1995,Women,Denmark,DNK,4,1,0,3,7,8,4,1995,False,Quarter-finals
+WC-1995,Women,England,ENG,4,2,0,2,6,9,4,1995,False,Quarter-finals
+WC-1995,Women,Germany,DEU,6,4,0,2,13,6,6,1995,False,Runners-up
+WC-1995,Women,Japan,JPN,4,1,0,3,2,8,4,1995,False,Quarter-finals
+WC-1995,Women,Nigeria,NGA,3,0,1,2,5,14,1,1995,False,Group stage
+WC-1995,Women,Norway,NOR,6,6,0,0,23,1,6,1995,True,Champions
+WC-1995,Women,Sweden,SWE,4,2,0,2,6,4,4,1995,False,Quarter-finals
+WC-1995,Women,United States,USA,6,4,1,1,15,5,5,1995,False,Semi-finals
+WC-1998,Men,Argentina,ARG,5,4,0,1,10,4,4,1998,False,Quarter-finals
+WC-1998,Men,Austria,AUT,3,0,2,1,3,4,1,1998,False,Group stage
+WC-1998,Men,Belgium,BEL,3,0,3,0,3,3,1,1998,False,Group stage
+WC-1998,Men,Brazil,BRA,7,5,0,2,14,10,6,1998,False,Runners-up
+WC-1998,Men,Bulgaria,BGR,3,0,1,2,1,7,1,1998,False,Group stage
+WC-1998,Men,Cameroon,CMR,3,0,2,1,2,5,1,1998,False,Group stage
+WC-1998,Men,Chile,CHL,4,0,3,1,5,8,3,1998,False,Round of 16
+WC-1998,Men,Colombia,COL,3,1,0,2,1,3,1,1998,False,Group stage
+WC-1998,Men,Croatia,HRV,7,5,0,2,11,5,5,1998,False,Semi-finals
+WC-1998,Men,Denmark,DNK,5,2,1,2,9,7,4,1998,False,Quarter-finals
+WC-1998,Men,England,ENG,4,2,0,2,7,4,3,1998,False,Round of 16
+WC-1998,Men,France,FRA,7,7,0,0,15,2,6,1998,True,Champions
+WC-1998,Men,Germany,DEU,5,3,1,1,8,6,4,1998,False,Quarter-finals
+WC-1998,Men,Iran,IRN,3,1,0,2,2,4,1,1998,False,Group stage
+WC-1998,Men,Italy,ITA,5,3,1,1,8,3,4,1998,False,Quarter-finals
+WC-1998,Men,Jamaica,JAM,3,1,0,2,3,9,1,1998,False,Group stage
+WC-1998,Men,Japan,JPN,3,0,0,3,1,4,1,1998,False,Group stage
+WC-1998,Men,Mexico,MEX,4,1,2,1,8,7,3,1998,False,Round of 16
+WC-1998,Men,Morocco,MAR,3,1,1,1,5,5,1,1998,False,Group stage
+WC-1998,Men,Netherlands,NLD,7,3,2,2,13,7,5,1998,False,Semi-finals
+WC-1998,Men,Nigeria,NGA,4,2,0,2,6,9,3,1998,False,Round of 16
+WC-1998,Men,Norway,NOR,4,1,2,1,5,5,3,1998,False,Round of 16
+WC-1998,Men,Paraguay,PRY,4,1,2,1,3,2,3,1998,False,Round of 16
+WC-1998,Men,Romania,ROU,4,2,1,1,4,3,3,1998,False,Round of 16
+WC-1998,Men,Saudi Arabia,SAU,3,0,1,2,2,7,1,1998,False,Group stage
+WC-1998,Men,Scotland,SCO,3,0,1,2,2,6,1,1998,False,Group stage
+WC-1998,Men,South Africa,ZAF,3,0,2,1,3,6,1,1998,False,Group stage
+WC-1998,Men,South Korea,KOR,3,0,1,2,2,9,1,1998,False,Group stage
+WC-1998,Men,Spain,ESP,3,1,1,1,8,4,1,1998,False,Group stage
+WC-1998,Men,Tunisia,TUN,3,0,1,2,1,4,1,1998,False,Group stage
+WC-1998,Men,United States,USA,3,0,0,3,1,5,1,1998,False,Group stage
+WC-1998,Men,Yugoslavia,YUG,4,2,1,1,5,4,3,1998,False,Round of 16
+WC-1999,Women,Australia,AUS,3,0,1,2,3,7,1,1999,False,Group stage
+WC-1999,Women,Brazil,BRA,6,4,1,1,16,9,5,1999,False,Semi-finals
+WC-1999,Women,Canada,CAN,3,0,1,2,3,12,1,1999,False,Group stage
+WC-1999,Women,China,CHN,6,5,0,1,19,2,6,1999,False,Runners-up
+WC-1999,Women,Denmark,DNK,3,0,0,3,1,8,1,1999,False,Group stage
+WC-1999,Women,Germany,DEU,4,1,2,1,12,7,4,1999,False,Quarter-finals
+WC-1999,Women,Ghana,GHA,3,0,1,2,1,10,1,1999,False,Group stage
+WC-1999,Women,Italy,ITA,3,1,1,1,3,3,1,1999,False,Group stage
+WC-1999,Women,Japan,JPN,3,0,1,2,1,10,1,1999,False,Group stage
+WC-1999,Women,Mexico,MEX,3,0,0,3,1,15,1,1999,False,Group stage
+WC-1999,Women,Nigeria,NGA,4,2,0,2,8,12,4,1999,False,Quarter-finals
+WC-1999,Women,North Korea,PRK,3,1,0,2,4,6,1,1999,False,Group stage
+WC-1999,Women,Norway,NOR,6,4,0,2,16,8,5,1999,False,Semi-finals
+WC-1999,Women,Russia,RUS,4,2,0,2,10,5,4,1999,False,Quarter-finals
+WC-1999,Women,Sweden,SWE,4,2,0,2,7,6,4,1999,False,Quarter-finals
+WC-1999,Women,United States,USA,6,6,0,0,18,3,6,1999,True,Champions
+WC-2002,Men,Argentina,ARG,3,1,1,1,2,2,1,2002,False,Group stage
+WC-2002,Men,Belgium,BEL,4,1,2,1,6,7,3,2002,False,Round of 16
+WC-2002,Men,Brazil,BRA,7,7,0,0,18,4,6,2002,True,Champions
+WC-2002,Men,Cameroon,CMR,3,1,1,1,2,3,1,2002,False,Group stage
+WC-2002,Men,China,CHN,3,0,0,3,0,9,1,2002,False,Group stage
+WC-2002,Men,Costa Rica,CRI,3,1,1,1,5,6,1,2002,False,Group stage
+WC-2002,Men,Croatia,HRV,3,1,0,2,2,3,1,2002,False,Group stage
+WC-2002,Men,Denmark,DNK,4,2,1,1,5,5,3,2002,False,Round of 16
+WC-2002,Men,Ecuador,ECU,3,1,0,2,2,4,1,2002,False,Group stage
+WC-2002,Men,England,ENG,5,2,2,1,6,3,4,2002,False,Quarter-finals
+WC-2002,Men,France,FRA,3,0,1,2,0,3,1,2002,False,Group stage
+WC-2002,Men,Germany,DEU,7,5,1,1,14,3,6,2002,False,Runners-up
+WC-2002,Men,Italy,ITA,4,1,1,2,5,5,3,2002,False,Round of 16
+WC-2002,Men,Japan,JPN,4,2,1,1,5,3,3,2002,False,Round of 16
+WC-2002,Men,Mexico,MEX,4,2,1,1,4,4,3,2002,False,Round of 16
+WC-2002,Men,Nigeria,NGA,3,0,1,2,1,3,1,2002,False,Group stage
+WC-2002,Men,Paraguay,PRY,4,1,1,2,6,7,3,2002,False,Round of 16
+WC-2002,Men,Poland,POL,3,1,0,2,3,7,1,2002,False,Group stage
+WC-2002,Men,Portugal,PRT,3,1,0,2,6,4,1,2002,False,Group stage
+WC-2002,Men,Republic of Ireland,IRL,4,1,2,1,6,3,3,2002,False,Round of 16
+WC-2002,Men,Russia,RUS,3,1,0,2,4,4,1,2002,False,Group stage
+WC-2002,Men,Saudi Arabia,SAU,3,0,0,3,0,12,1,2002,False,Group stage
+WC-2002,Men,Senegal,SEN,5,2,2,1,7,6,4,2002,False,Quarter-finals
+WC-2002,Men,Slovenia,SVN,3,0,0,3,2,7,1,2002,False,Group stage
+WC-2002,Men,South Africa,ZAF,3,1,1,1,5,5,1,2002,False,Group stage
+WC-2002,Men,South Korea,KOR,7,4,1,2,8,6,5,2002,False,Semi-finals
+WC-2002,Men,Spain,ESP,5,4,0,1,10,5,4,2002,False,Quarter-finals
+WC-2002,Men,Sweden,SWE,4,1,2,1,5,5,3,2002,False,Round of 16
+WC-2002,Men,Tunisia,TUN,3,0,1,2,1,5,1,2002,False,Group stage
+WC-2002,Men,Turkey,TUR,7,4,1,2,10,6,5,2002,False,Semi-finals
+WC-2002,Men,United States,USA,5,2,1,2,7,7,4,2002,False,Quarter-finals
+WC-2002,Men,Uruguay,URY,3,0,2,1,4,5,1,2002,False,Group stage
+WC-2003,Women,Argentina,ARG,3,0,0,3,1,15,1,2003,False,Group stage
+WC-2003,Women,Australia,AUS,3,0,1,2,3,5,1,2003,False,Group stage
+WC-2003,Women,Brazil,BRA,4,2,1,1,9,4,4,2003,False,Quarter-finals
+WC-2003,Women,Canada,CAN,6,3,0,3,10,10,5,2003,False,Semi-finals
+WC-2003,Women,China,CHN,4,2,1,1,3,2,4,2003,False,Quarter-finals
+WC-2003,Women,France,FRA,3,1,1,1,2,3,1,2003,False,Group stage
+WC-2003,Women,Germany,DEU,6,6,0,0,25,4,6,2003,True,Champions
+WC-2003,Women,Ghana,GHA,3,1,0,2,2,5,1,2003,False,Group stage
+WC-2003,Women,Japan,JPN,3,1,0,2,7,6,1,2003,False,Group stage
+WC-2003,Women,Nigeria,NGA,3,0,0,3,0,11,1,2003,False,Group stage
+WC-2003,Women,North Korea,PRK,3,1,0,2,3,4,1,2003,False,Group stage
+WC-2003,Women,Norway,NOR,4,2,0,2,10,6,4,2003,False,Quarter-finals
+WC-2003,Women,Russia,RUS,4,2,0,2,6,9,4,2003,False,Quarter-finals
+WC-2003,Women,South Korea,KOR,3,0,0,3,1,11,1,2003,False,Group stage
+WC-2003,Women,Sweden,SWE,6,4,0,2,10,7,6,2003,False,Runners-up
+WC-2003,Women,United States,USA,6,5,0,1,15,5,5,2003,False,Semi-finals
+WC-2006,Men,Angola,AGO,3,0,2,1,1,2,1,2006,False,Group stage
+WC-2006,Men,Argentina,ARG,5,3,1,1,11,3,4,2006,False,Quarter-finals
+WC-2006,Men,Australia,AUS,4,1,1,2,5,6,3,2006,False,Round of 16
+WC-2006,Men,Brazil,BRA,5,4,0,1,10,2,4,2006,False,Quarter-finals
+WC-2006,Men,Costa Rica,CRI,3,0,0,3,3,9,1,2006,False,Group stage
+WC-2006,Men,Croatia,HRV,3,0,2,1,2,3,1,2006,False,Group stage
+WC-2006,Men,Czech Republic,CZE,3,1,0,2,3,4,1,2006,False,Group stage
+WC-2006,Men,Ecuador,ECU,4,2,0,2,5,4,3,2006,False,Round of 16
+WC-2006,Men,England,ENG,5,3,1,1,6,2,4,2006,False,Quarter-finals
+WC-2006,Men,France,FRA,7,4,2,1,9,3,6,2006,False,Runners-up
+WC-2006,Men,Germany,DEU,7,6,0,1,14,6,5,2006,False,Semi-finals
+WC-2006,Men,Ghana,GHA,4,2,0,2,4,6,3,2006,False,Round of 16
+WC-2006,Men,Iran,IRN,3,0,1,2,2,6,1,2006,False,Group stage
+WC-2006,Men,Italy,ITA,7,6,1,0,12,2,6,2006,True,Champions
+WC-2006,Men,Ivory Coast,CIV,3,1,0,2,5,6,1,2006,False,Group stage
+WC-2006,Men,Japan,JPN,3,0,1,2,2,7,1,2006,False,Group stage
+WC-2006,Men,Mexico,MEX,4,1,1,2,5,5,3,2006,False,Round of 16
+WC-2006,Men,Netherlands,NLD,4,2,1,1,3,2,3,2006,False,Round of 16
+WC-2006,Men,Paraguay,PRY,3,1,0,2,2,2,1,2006,False,Group stage
+WC-2006,Men,Poland,POL,3,1,0,2,2,4,1,2006,False,Group stage
+WC-2006,Men,Portugal,PRT,7,5,0,2,7,5,5,2006,False,Semi-finals
+WC-2006,Men,Saudi Arabia,SAU,3,0,1,2,2,7,1,2006,False,Group stage
+WC-2006,Men,Serbia and Montenegro,SCG,3,0,0,3,2,10,1,2006,False,Group stage
+WC-2006,Men,South Korea,KOR,3,1,1,1,3,4,1,2006,False,Group stage
+WC-2006,Men,Spain,ESP,4,3,0,1,9,4,3,2006,False,Round of 16
+WC-2006,Men,Sweden,SWE,4,1,2,1,3,4,3,2006,False,Round of 16
+WC-2006,Men,Switzerland,CHE,4,2,1,1,4,0,3,2006,False,Round of 16
+WC-2006,Men,Togo,TGO,3,0,0,3,1,6,1,2006,False,Group stage
+WC-2006,Men,Trinidad and Tobago,TTO,3,0,1,2,0,4,1,2006,False,Group stage
+WC-2006,Men,Tunisia,TUN,3,0,1,2,3,6,1,2006,False,Group stage
+WC-2006,Men,Ukraine,UKR,5,3,0,2,5,7,4,2006,False,Quarter-finals
+WC-2006,Men,United States,USA,3,0,1,2,2,6,1,2006,False,Group stage
+WC-2007,Women,Argentina,ARG,3,0,0,3,1,18,1,2007,False,Group stage
+WC-2007,Women,Australia,AUS,4,1,2,1,9,7,4,2007,False,Quarter-finals
+WC-2007,Women,Brazil,BRA,6,5,0,1,17,4,6,2007,False,Runners-up
+WC-2007,Women,Canada,CAN,3,1,1,1,7,4,1,2007,False,Group stage
+WC-2007,Women,China,CHN,4,2,0,2,5,7,4,2007,False,Quarter-finals
+WC-2007,Women,Denmark,DNK,3,1,0,2,4,4,1,2007,False,Group stage
+WC-2007,Women,England,ENG,4,1,2,1,8,6,4,2007,False,Quarter-finals
+WC-2007,Women,Germany,DEU,6,5,1,0,21,0,6,2007,True,Champions
+WC-2007,Women,Ghana,GHA,3,0,0,3,3,15,1,2007,False,Group stage
+WC-2007,Women,Japan,JPN,3,1,1,1,3,4,1,2007,False,Group stage
+WC-2007,Women,New Zealand,NZL,3,0,0,3,0,9,1,2007,False,Group stage
+WC-2007,Women,Nigeria,NGA,3,0,1,2,1,4,1,2007,False,Group stage
+WC-2007,Women,North Korea,PRK,4,1,1,2,5,7,4,2007,False,Quarter-finals
+WC-2007,Women,Norway,NOR,6,3,1,2,12,11,5,2007,False,Semi-finals
+WC-2007,Women,Sweden,SWE,3,1,1,1,3,4,1,2007,False,Group stage
+WC-2007,Women,United States,USA,6,4,1,1,12,7,5,2007,False,Semi-finals
+WC-2010,Men,Algeria,DZA,3,0,1,2,0,2,1,2010,False,Group stage
+WC-2010,Men,Argentina,ARG,5,4,0,1,10,6,4,2010,False,Quarter-finals
+WC-2010,Men,Australia,AUS,3,1,1,1,3,6,1,2010,False,Group stage
+WC-2010,Men,Brazil,BRA,5,3,1,1,9,4,4,2010,False,Quarter-finals
+WC-2010,Men,Cameroon,CMR,3,0,0,3,2,5,1,2010,False,Group stage
+WC-2010,Men,Chile,CHL,4,2,0,2,3,5,3,2010,False,Round of 16
+WC-2010,Men,Denmark,DNK,3,1,0,2,3,6,1,2010,False,Group stage
+WC-2010,Men,England,ENG,4,1,2,1,3,5,3,2010,False,Round of 16
+WC-2010,Men,France,FRA,3,0,1,2,1,4,1,2010,False,Group stage
+WC-2010,Men,Germany,DEU,7,5,0,2,16,5,5,2010,False,Semi-finals
+WC-2010,Men,Ghana,GHA,5,2,1,2,5,4,4,2010,False,Quarter-finals
+WC-2010,Men,Greece,GRC,3,1,0,2,2,5,1,2010,False,Group stage
+WC-2010,Men,Honduras,HND,3,0,1,2,0,3,1,2010,False,Group stage
+WC-2010,Men,Italy,ITA,3,0,2,1,4,5,1,2010,False,Group stage
+WC-2010,Men,Ivory Coast,CIV,3,1,1,1,4,3,1,2010,False,Group stage
+WC-2010,Men,Japan,JPN,4,2,0,2,4,2,3,2010,False,Round of 16
+WC-2010,Men,Mexico,MEX,4,1,1,2,4,5,3,2010,False,Round of 16
+WC-2010,Men,Netherlands,NLD,7,6,0,1,12,6,6,2010,False,Runners-up
+WC-2010,Men,New Zealand,NZL,3,0,3,0,2,2,1,2010,False,Group stage
+WC-2010,Men,Nigeria,NGA,3,0,1,2,3,5,1,2010,False,Group stage
+WC-2010,Men,North Korea,PRK,3,0,0,3,1,12,1,2010,False,Group stage
+WC-2010,Men,Paraguay,PRY,5,2,2,1,3,2,4,2010,False,Quarter-finals
+WC-2010,Men,Portugal,PRT,4,1,2,1,7,1,3,2010,False,Round of 16
+WC-2010,Men,Serbia,SRB,3,1,0,2,2,3,1,2010,False,Group stage
+WC-2010,Men,Slovakia,SVK,4,1,1,2,5,7,3,2010,False,Round of 16
+WC-2010,Men,Slovenia,SVN,3,1,1,1,3,3,1,2010,False,Group stage
+WC-2010,Men,South Africa,ZAF,3,1,1,1,3,5,1,2010,False,Group stage
+WC-2010,Men,South Korea,KOR,4,1,1,2,6,8,3,2010,False,Round of 16
+WC-2010,Men,Spain,ESP,7,6,0,1,8,2,6,2010,True,Champions
+WC-2010,Men,Switzerland,CHE,3,1,1,1,1,1,1,2010,False,Group stage
+WC-2010,Men,United States,USA,4,1,2,1,5,5,3,2010,False,Round of 16
+WC-2010,Men,Uruguay,URY,7,4,1,2,11,8,5,2010,False,Semi-finals
+WC-2011,Women,Australia,AUS,4,2,0,2,6,7,4,2011,False,Quarter-finals
+WC-2011,Women,Brazil,BRA,4,3,0,1,9,2,4,2011,False,Quarter-finals
+WC-2011,Women,Canada,CAN,3,0,0,3,1,7,1,2011,False,Group stage
+WC-2011,Women,Colombia,COL,3,0,1,2,0,4,1,2011,False,Group stage
+WC-2011,Women,England,ENG,4,2,1,1,6,3,4,2011,False,Quarter-finals
+WC-2011,Women,Equatorial Guinea,GNQ,3,0,0,3,2,7,1,2011,False,Group stage
+WC-2011,Women,France,FRA,6,3,0,3,10,10,5,2011,False,Semi-finals
+WC-2011,Women,Germany,DEU,4,3,0,1,7,4,4,2011,False,Quarter-finals
+WC-2011,Women,Japan,JPN,6,5,0,1,12,6,6,2011,True,Champions
+WC-2011,Women,Mexico,MEX,3,0,2,1,3,7,1,2011,False,Group stage
+WC-2011,Women,New Zealand,NZL,3,0,1,2,4,6,1,2011,False,Group stage
+WC-2011,Women,Nigeria,NGA,3,1,0,2,1,2,1,2011,False,Group stage
+WC-2011,Women,North Korea,PRK,3,0,1,2,0,3,1,2011,False,Group stage
+WC-2011,Women,Norway,NOR,3,1,0,2,2,5,1,2011,False,Group stage
+WC-2011,Women,Sweden,SWE,6,5,0,1,10,6,5,2011,False,Semi-finals
+WC-2011,Women,United States,USA,6,4,0,2,13,7,6,2011,False,Runners-up
+WC-2014,Men,Algeria,DZA,4,1,1,2,7,7,3,2014,False,Round of 16
+WC-2014,Men,Argentina,ARG,7,6,0,1,8,4,6,2014,False,Runners-up
+WC-2014,Men,Australia,AUS,3,0,0,3,3,9,1,2014,False,Group stage
+WC-2014,Men,Belgium,BEL,5,4,0,1,6,3,4,2014,False,Quarter-finals
+WC-2014,Men,Bosnia and Herzegovina,BIH,3,1,0,2,4,4,1,2014,False,Group stage
+WC-2014,Men,Brazil,BRA,7,4,1,2,11,14,5,2014,False,Semi-finals
+WC-2014,Men,Cameroon,CMR,3,0,0,3,1,9,1,2014,False,Group stage
+WC-2014,Men,Chile,CHL,4,2,0,2,6,4,3,2014,False,Round of 16
+WC-2014,Men,Colombia,COL,5,4,0,1,12,4,4,2014,False,Quarter-finals
+WC-2014,Men,Costa Rica,CRI,5,3,1,1,5,2,4,2014,False,Quarter-finals
+WC-2014,Men,Croatia,HRV,3,1,0,2,6,6,1,2014,False,Group stage
+WC-2014,Men,Ecuador,ECU,3,1,1,1,3,3,1,2014,False,Group stage
+WC-2014,Men,England,ENG,3,0,1,2,2,4,1,2014,False,Group stage
+WC-2014,Men,France,FRA,5,3,1,1,10,3,4,2014,False,Quarter-finals
+WC-2014,Men,Germany,DEU,7,6,1,0,18,4,6,2014,True,Champions
+WC-2014,Men,Ghana,GHA,3,0,1,2,4,6,1,2014,False,Group stage
+WC-2014,Men,Greece,GRC,4,1,1,2,3,5,3,2014,False,Round of 16
+WC-2014,Men,Honduras,HND,3,0,0,3,1,8,1,2014,False,Group stage
+WC-2014,Men,Iran,IRN,3,0,1,2,1,4,1,2014,False,Group stage
+WC-2014,Men,Italy,ITA,3,1,0,2,2,3,1,2014,False,Group stage
+WC-2014,Men,Ivory Coast,CIV,3,1,0,2,4,5,1,2014,False,Group stage
+WC-2014,Men,Japan,JPN,3,0,1,2,2,6,1,2014,False,Group stage
+WC-2014,Men,Mexico,MEX,4,2,1,1,5,3,3,2014,False,Round of 16
+WC-2014,Men,Netherlands,NLD,7,6,0,1,15,4,5,2014,False,Semi-finals
+WC-2014,Men,Nigeria,NGA,4,1,1,2,3,5,3,2014,False,Round of 16
+WC-2014,Men,Portugal,PRT,3,1,1,1,4,7,1,2014,False,Group stage
+WC-2014,Men,Russia,RUS,3,0,2,1,2,3,1,2014,False,Group stage
+WC-2014,Men,South Korea,KOR,3,0,1,2,3,6,1,2014,False,Group stage
+WC-2014,Men,Spain,ESP,3,1,0,2,4,7,1,2014,False,Group stage
+WC-2014,Men,Switzerland,CHE,4,2,0,2,7,7,3,2014,False,Round of 16
+WC-2014,Men,United States,USA,4,1,1,2,5,6,3,2014,False,Round of 16
+WC-2014,Men,Uruguay,URY,4,2,0,2,4,6,3,2014,False,Round of 16
+WC-2015,Women,Australia,AUS,5,2,1,2,5,5,4,2015,False,Quarter-finals
+WC-2015,Women,Brazil,BRA,4,3,0,1,4,1,3,2015,False,Round of 16
+WC-2015,Women,Cameroon,CMR,4,2,0,2,9,4,3,2015,False,Round of 16
+WC-2015,Women,Canada,CAN,5,2,2,1,4,3,4,2015,False,Quarter-finals
+WC-2015,Women,China,CHN,5,2,1,2,4,4,4,2015,False,Quarter-finals
+WC-2015,Women,Colombia,COL,4,1,1,2,4,5,3,2015,False,Round of 16
+WC-2015,Women,Costa Rica,CRI,3,0,2,1,3,4,1,2015,False,Group stage
+WC-2015,Women,Ecuador,ECU,3,0,0,3,1,17,1,2015,False,Group stage
+WC-2015,Women,England,ENG,7,5,0,2,10,7,5,2015,False,Semi-finals
+WC-2015,Women,France,FRA,5,3,0,2,10,3,4,2015,False,Quarter-finals
+WC-2015,Women,Germany,DEU,7,4,1,2,20,6,5,2015,False,Semi-finals
+WC-2015,Women,Ivory Coast,CIV,3,0,0,3,3,16,1,2015,False,Group stage
+WC-2015,Women,Japan,JPN,7,6,0,1,11,8,6,2015,False,Runners-up
+WC-2015,Women,Mexico,MEX,3,0,1,2,2,8,1,2015,False,Group stage
+WC-2015,Women,Netherlands,NLD,4,1,1,2,3,4,3,2015,False,Round of 16
+WC-2015,Women,New Zealand,NZL,3,0,2,1,2,3,1,2015,False,Group stage
+WC-2015,Women,Nigeria,NGA,3,0,1,2,3,6,1,2015,False,Group stage
+WC-2015,Women,Norway,NOR,4,2,1,1,9,4,3,2015,False,Round of 16
+WC-2015,Women,South Korea,KOR,4,1,1,2,4,8,3,2015,False,Round of 16
+WC-2015,Women,Spain,ESP,3,0,1,2,2,4,1,2015,False,Group stage
+WC-2015,Women,Sweden,SWE,4,0,3,1,5,8,3,2015,False,Round of 16
+WC-2015,Women,Switzerland,CHE,4,1,0,3,11,5,3,2015,False,Round of 16
+WC-2015,Women,Thailand,THA,3,1,0,2,3,10,1,2015,False,Group stage
+WC-2015,Women,United States,USA,7,6,1,0,14,3,6,2015,True,Champions
+WC-2018,Men,Argentina,ARG,4,1,1,2,6,9,3,2018,False,Round of 16
+WC-2018,Men,Australia,AUS,3,0,1,2,2,5,1,2018,False,Group stage
+WC-2018,Men,Belgium,BEL,7,6,0,1,16,6,5,2018,False,Semi-finals
+WC-2018,Men,Brazil,BRA,5,3,1,1,8,3,4,2018,False,Quarter-finals
+WC-2018,Men,Colombia,COL,4,2,0,2,6,3,3,2018,False,Round of 16
+WC-2018,Men,Costa Rica,CRI,3,0,1,2,2,5,1,2018,False,Group stage
+WC-2018,Men,Croatia,HRV,7,6,0,1,14,9,6,2018,False,Runners-up
+WC-2018,Men,Denmark,DNK,4,1,2,1,3,2,3,2018,False,Round of 16
+WC-2018,Men,Egypt,EGY,3,0,0,3,2,6,1,2018,False,Group stage
+WC-2018,Men,England,ENG,7,4,0,3,12,8,5,2018,False,Semi-finals
+WC-2018,Men,France,FRA,7,6,1,0,14,6,6,2018,True,Champions
+WC-2018,Men,Germany,DEU,3,1,0,2,2,4,1,2018,False,Group stage
+WC-2018,Men,Iceland,ISL,3,0,1,2,2,5,1,2018,False,Group stage
+WC-2018,Men,Iran,IRN,3,1,1,1,2,2,1,2018,False,Group stage
+WC-2018,Men,Japan,JPN,4,1,1,2,6,7,3,2018,False,Round of 16
+WC-2018,Men,Mexico,MEX,4,2,0,2,3,6,3,2018,False,Round of 16
+WC-2018,Men,Morocco,MAR,3,0,1,2,2,4,1,2018,False,Group stage
+WC-2018,Men,Nigeria,NGA,3,1,0,2,3,4,1,2018,False,Group stage
+WC-2018,Men,Panama,PAN,3,0,0,3,2,11,1,2018,False,Group stage
+WC-2018,Men,Peru,PER,3,1,0,2,2,2,1,2018,False,Group stage
+WC-2018,Men,Poland,POL,3,1,0,2,2,5,1,2018,False,Group stage
+WC-2018,Men,Portugal,PRT,4,1,2,1,6,6,3,2018,False,Round of 16
+WC-2018,Men,Russia,RUS,5,3,0,2,11,7,4,2018,False,Quarter-finals
+WC-2018,Men,Saudi Arabia,SAU,3,1,0,2,2,7,1,2018,False,Group stage
+WC-2018,Men,Senegal,SEN,3,1,1,1,4,4,1,2018,False,Group stage
+WC-2018,Men,Serbia,SRB,3,1,0,2,2,4,1,2018,False,Group stage
+WC-2018,Men,South Korea,KOR,3,1,0,2,3,3,1,2018,False,Group stage
+WC-2018,Men,Spain,ESP,4,1,2,1,7,6,3,2018,False,Round of 16
+WC-2018,Men,Sweden,SWE,5,3,0,2,6,4,4,2018,False,Quarter-finals
+WC-2018,Men,Switzerland,CHE,4,1,2,1,5,5,3,2018,False,Round of 16
+WC-2018,Men,Tunisia,TUN,3,1,0,2,5,8,1,2018,False,Group stage
+WC-2018,Men,Uruguay,URY,5,4,0,1,7,3,4,2018,False,Quarter-finals
+WC-2019,Women,Argentina,ARG,3,0,2,1,3,4,1,2019,False,Group stage
+WC-2019,Women,Australia,AUS,4,2,0,2,9,6,3,2019,False,Round of 16
+WC-2019,Women,Brazil,BRA,4,2,0,2,7,5,3,2019,False,Round of 16
+WC-2019,Women,Cameroon,CMR,4,1,0,3,3,8,3,2019,False,Round of 16
+WC-2019,Women,Canada,CAN,4,2,0,2,4,3,3,2019,False,Round of 16
+WC-2019,Women,Chile,CHL,3,1,0,2,2,5,1,2019,False,Group stage
+WC-2019,Women,China,CHN,4,1,1,2,1,3,3,2019,False,Round of 16
+WC-2019,Women,England,ENG,7,5,0,2,13,5,5,2019,False,Semi-finals
+WC-2019,Women,France,FRA,5,4,0,1,10,4,4,2019,False,Quarter-finals
+WC-2019,Women,Germany,DEU,5,4,0,1,10,2,4,2019,False,Quarter-finals
+WC-2019,Women,Italy,ITA,5,3,0,2,9,4,4,2019,False,Quarter-finals
+WC-2019,Women,Jamaica,JAM,3,0,0,3,1,12,1,2019,False,Group stage
+WC-2019,Women,Japan,JPN,4,1,1,2,3,5,3,2019,False,Round of 16
+WC-2019,Women,Netherlands,NLD,7,6,0,1,11,5,6,2019,False,Runners-up
+WC-2019,Women,New Zealand,NZL,3,0,0,3,1,5,1,2019,False,Group stage
+WC-2019,Women,Nigeria,NGA,4,1,0,3,2,7,3,2019,False,Round of 16
+WC-2019,Women,Norway,NOR,5,3,0,2,7,7,4,2019,False,Quarter-finals
+WC-2019,Women,Scotland,SCO,3,0,1,2,5,7,1,2019,False,Group stage
+WC-2019,Women,South Africa,ZAF,3,0,0,3,1,8,1,2019,False,Group stage
+WC-2019,Women,South Korea,KOR,3,0,0,3,1,8,1,2019,False,Group stage
+WC-2019,Women,Spain,ESP,4,1,1,2,4,4,3,2019,False,Round of 16
+WC-2019,Women,Sweden,SWE,7,5,0,2,12,6,5,2019,False,Semi-finals
+WC-2019,Women,Thailand,THA,3,0,0,3,1,20,1,2019,False,Group stage
+WC-2019,Women,United States,USA,7,7,0,0,26,3,6,2019,True,Champions
+WC-2022,Men,Argentina,ARG,7,6,0,1,15,8,6,2022,True,Champions
+WC-2022,Men,Australia,AUS,4,2,0,2,4,6,3,2022,False,Round of 16
+WC-2022,Men,Belgium,BEL,3,1,1,1,1,2,1,2022,False,Group stage
+WC-2022,Men,Brazil,BRA,5,3,0,2,8,3,4,2022,False,Quarter-finals
+WC-2022,Men,Cameroon,CMR,3,1,1,1,4,4,1,2022,False,Group stage
+WC-2022,Men,Canada,CAN,3,0,0,3,2,7,1,2022,False,Group stage
+WC-2022,Men,Costa Rica,CRI,3,1,0,2,3,11,1,2022,False,Group stage
+WC-2022,Men,Croatia,HRV,7,4,2,1,8,7,5,2022,False,Semi-finals
+WC-2022,Men,Denmark,DNK,3,0,1,2,1,3,1,2022,False,Group stage
+WC-2022,Men,Ecuador,ECU,3,1,1,1,4,3,1,2022,False,Group stage
+WC-2022,Men,England,ENG,5,3,1,1,13,4,4,2022,False,Quarter-finals
+WC-2022,Men,France,FRA,7,5,0,2,16,8,6,2022,False,Runners-up
+WC-2022,Men,Germany,DEU,3,1,1,1,6,5,1,2022,False,Group stage
+WC-2022,Men,Ghana,GHA,3,1,0,2,5,7,1,2022,False,Group stage
+WC-2022,Men,Iran,IRN,3,1,0,2,4,7,1,2022,False,Group stage
+WC-2022,Men,Japan,JPN,4,2,0,2,5,4,3,2022,False,Round of 16
+WC-2022,Men,Mexico,MEX,3,1,1,1,2,3,1,2022,False,Group stage
+WC-2022,Men,Morocco,MAR,7,4,1,2,6,5,5,2022,False,Semi-finals
+WC-2022,Men,Netherlands,NLD,5,3,1,1,10,4,4,2022,False,Quarter-finals
+WC-2022,Men,Poland,POL,4,1,1,2,3,5,3,2022,False,Round of 16
+WC-2022,Men,Portugal,PRT,5,3,0,2,12,6,4,2022,False,Quarter-finals
+WC-2022,Men,Qatar,QAT,3,0,0,3,1,7,1,2022,False,Group stage
+WC-2022,Men,Saudi Arabia,SAU,3,1,0,2,3,5,1,2022,False,Group stage
+WC-2022,Men,Senegal,SEN,4,2,0,2,5,7,3,2022,False,Round of 16
+WC-2022,Men,Serbia,SRB,3,0,1,2,5,8,1,2022,False,Group stage
+WC-2022,Men,South Korea,KOR,4,1,1,2,5,8,3,2022,False,Round of 16
+WC-2022,Men,Spain,ESP,4,1,1,2,9,3,3,2022,False,Round of 16
+WC-2022,Men,Switzerland,CHE,4,2,0,2,5,9,3,2022,False,Round of 16
+WC-2022,Men,Tunisia,TUN,3,1,1,1,1,1,1,2022,False,Group stage
+WC-2022,Men,United States,USA,4,1,2,1,3,4,3,2022,False,Round of 16
+WC-2022,Men,Uruguay,URY,3,1,1,1,2,2,1,2022,False,Group stage
+WC-2022,Men,Wales,WAL,3,0,1,2,1,6,1,2022,False,Group stage

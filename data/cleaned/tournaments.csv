@@ -1,0 +1,31 @@
+tournament_id,year,sex,host_country,winner,count_teams,host_won,matches,et,shootouts,draws,goals,stoppage_goals,penalty_goals,own_goals,et_goals,goals_per_match,host_result
+WC-1930,1930,Men,Uruguay,Uruguay,13,1,18,0,0,0,70,0,1,1,0,3.889,champions
+WC-1934,1934,Men,Italy,Italy,16,1,17,3,0,1,70,0,3,0,4,4.118,champions
+WC-1938,1938,Men,France,Italy,15,0,18,6,0,3,84,0,3,2,9,4.667,quarter-finals
+WC-1950,1950,Men,Brazil,Uruguay,13,0,22,0,0,3,88,0,3,0,0,4.0,runners-up
+WC-1954,1954,Men,Switzerland,West Germany,16,0,26,3,0,2,140,0,7,4,4,5.385,quarter-finals
+WC-1958,1958,Men,Sweden,Brazil,16,0,35,1,0,10,126,0,7,0,1,3.6,runners-up
+WC-1962,1962,Men,Chile,Brazil,16,0,32,0,0,5,89,0,8,0,0,2.781,third place
+WC-1966,1966,Men,England,England,16,1,32,1,0,5,89,0,8,2,2,2.781,champions
+WC-1970,1970,Men,Mexico,Brazil,16,0,32,3,0,5,95,0,5,1,7,2.969,quarter-finals
+WC-1974,1974,Men,West Germany,West Germany,16,1,38,0,0,10,97,0,6,3,0,2.553,champions
+WC-1978,1978,Men,Argentina,Argentina,16,1,38,1,0,9,102,0,12,3,2,2.684,champions
+WC-1982,1982,Men,Spain,Italy,24,0,52,1,1,16,146,0,8,1,4,2.808,second group stage
+WC-1986,1986,Men,Mexico,Argentina,24,0,52,5,3,11,132,0,12,2,5,2.538,quarter-finals
+WC-1990,1990,Men,Italy,West Germany,24,0,52,8,4,8,115,4,13,0,6,2.212,third place
+WC-1994,1994,Men,United States,Brazil,24,0,52,4,3,8,141,3,15,1,3,2.712,round of 16
+WC-1998,1998,Men,France,France,32,1,64,4,3,16,171,19,17,6,1,2.672,champions
+WC-2002,2002,Men,"Korea, Japan",Brazil,32,0,64,5,2,14,161,9,13,3,3,2.516,round of 16
+WC-2006,2006,Men,Germany,Italy,32,0,64,6,4,11,147,12,13,4,3,2.297,third place
+WC-2010,2010,Men,South Africa,Spain,32,0,64,4,2,14,145,8,9,2,2,2.266,group stage
+WC-2014,2014,Men,Brazil,Germany,32,0,64,8,4,9,171,16,12,5,8,2.672,fourth place
+WC-2018,2018,Men,Russia,France,32,0,64,5,4,9,169,22,22,12,3,2.641,quarter-finals
+WC-2022,2022,Men,Qatar,Argentina,32,0,64,5,5,10,172,21,17,2,4,2.688,group stage
+WC-1991,1991,Women,China,United States,12,0,26,2,0,1,99,0,9,2,2,3.808,quarter-finals
+WC-1995,1995,Women,Sweden,Norway,12,0,26,1,1,2,99,6,7,0,0,3.808,quarter-finals
+WC-1999,1999,Women,United States,United States,16,1,32,2,2,4,123,9,7,3,1,3.844,champions
+WC-2003,2003,Women,United States,Germany,16,0,32,1,0,2,107,5,8,1,1,3.344,third place
+WC-2007,2007,Women,China,Germany,16,0,32,0,0,6,111,7,7,3,0,3.469,quarter-finals
+WC-2011,2011,Women,Germany,Japan,16,0,32,4,3,3,86,3,4,2,5,2.688,quarter-finals
+WC-2015,2015,Women,Canada,United States,24,0,52,2,1,10,146,10,18,6,1,2.808,quarter-finals
+WC-2019,2019,Women,France,United States,24,0,52,3,1,3,146,11,18,8,2,2.808,quarter-finals

@@ -1,0 +1,306 @@
+<title>World Cup by the Minute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=DM+Mono:wght@400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+/* Layout: a matchday programme. A goal clock is the centrepiece; trend, hosts, teams and records follow as programme spreads. */
+:root{
+  --paper:#f4f3ee; --card:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781; --rule:#e1e0d9; --axis:#c3c2b7;
+  --men:#2a78d6; --women:#eb6834; --all:#0b0b0b; --stop:#e34948; --pitch:#e9efe6; --line-w:#ffffff;
+  --display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif; --sans:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0d0d0d; --card:#1a1a19; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781; --rule:#2c2c2a; --axis:#383835;
+  --men:#3987e5; --women:#d95926; --all:#f0efec; --stop:#e66767; --pitch:#17201a; --line-w:#2b3a2f; color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --paper:#0d0d0d; --card:#1a1a19; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781; --rule:#2c2c2a; --axis:#383835;
+  --men:#3987e5; --women:#d95926; --all:#f0efec; --stop:#e66767; --pitch:#17201a; --line-w:#2b3a2f; color-scheme:dark; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(16px,3vw,32px);padding-block:26px 56px;display:flex;flex-direction:column;gap:18px}
+h1,h2,h3,p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px 40px;align-items:end}
+.head h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,7.4vw,92px);line-height:.9;letter-spacing:-.03em;margin-top:10px}
+.head h1 span{color:var(--stop)}
+.lede{color:var(--ink-2);font-size:17px;max-width:56ch;margin-top:14px}
+.lede b{color:var(--ink)}
+.src{font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;gap:6px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.src a{color:var(--ink)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}.dot.live{background:#0ca30c}
+.controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);padding-block:10px;border-block:1px solid var(--rule)}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:99px;overflow:hidden;background:var(--card)}
+.seg button{all:unset;cursor:pointer;padding:6px 14px;font-size:13px;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.seg button i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--card)}
+.seg button:focus-visible,select:focus-visible{outline:2px solid var(--men);outline-offset:2px}
+.fg{display:flex;align-items:center;gap:6px}
+.fg label{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+select{font:inherit;font-size:13px;padding:6px 10px;border-radius:8px;border:1px solid var(--rule);background:var(--card);color:var(--ink)}
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--rule);border-radius:14px;background:var(--card);overflow:hidden}
+.kpi{padding:14px 16px;border-right:1px solid var(--rule);min-width:0}
+.kpi:last-child{border-right:0}
+.kpi .k{font-size:12.5px;color:var(--ink-2)}
+.kpi .v{font-family:var(--display);font-weight:700;font-size:clamp(26px,3vw,38px);line-height:1.1;margin-top:2px}
+.kpi .s{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.panel{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.panel h2{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.01em;line-height:1.1}
+.panel .sub{color:var(--ink-2);max-width:66ch}
+.s12{grid-column:span 12}.s7{grid-column:span 7}.s5{grid-column:span 5}.s6{grid-column:span 6}
+.clockwrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:center}
+.callout{font-family:var(--display);font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1;letter-spacing:-.02em}
+.callout em{font-style:normal;color:var(--stop)}
+.facts{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.fact{border-left:3px solid var(--rule);padding-left:12px}
+.fact b{font-family:var(--display);font-size:22px}
+.fact span{display:block;color:var(--ink-2);font-size:13.5px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+svg{display:block;max-width:100%}
+svg text{fill:var(--ink-2);font-family:var(--mono);font-size:10.5px}
+.axis path,.axis line{stroke:var(--axis)} .axis text{fill:var(--muted)}
+.gl line{stroke:var(--rule)} .gl path{display:none}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule)}
+th{font-family:var(--mono);font-size:10.5px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+td.sc{font-family:var(--display);font-weight:700;font-size:17px;text-align:center;white-space:nowrap}
+.teamk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.teamk div{background:var(--paper);border-radius:10px;padding:10px 12px}
+.teamk b{font-family:var(--display);font-size:24px;display:block;line-height:1.1}
+.teamk span{font-size:12px;color:var(--ink-2)}
+.tip{position:fixed;pointer-events:none;z-index:20;background:var(--ink);color:var(--card);font-size:12.5px;padding:7px 9px;border-radius:6px;max-width:260px;opacity:0;transition:opacity .12s;line-height:1.4}
+footer{color:var(--muted);font-size:12px;max-width:95ch}
+footer a{color:var(--ink-2)}
+@media (max-width:1000px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.kpi:nth-child(3){border-right:0}.kpi:nth-child(-n+3){border-bottom:1px solid var(--rule)}}
+@media (max-width:880px){.head,.clockwrap{grid-template-columns:minmax(0,1fr)}.s7,.s5,.s6{grid-column:span 12}.teamk{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi{border-right:0;border-bottom:1px solid var(--rule)}}
+</style>
+
+<!--SITEBAR-->
+<div class="wrap">
+  <header class="head">
+    <div>
+      <div class="eyebrow">FIFA World Cup · men's 1930–2022 · women's 1991–2019</div>
+      <h1>World Cup,<br>by the <span>minute</span></h1>
+      <p class="lede" id="lede">Every World Cup goal, timed and counted. When goals happen, how scoring has changed, how hosts fare, and how any nation's record stacks up.</p>
+      <div class="src" id="src"><span class="dot"></span>Loading data…</div>
+    </div>
+    <div class="kpis" id="kpis" style="grid-template-columns:repeat(2,minmax(0,1fr))"></div>
+  </header>
+
+  <nav class="controls" aria-label="Filters">
+    <div class="seg" role="group" aria-label="Tournament" id="sexseg">
+      <button type="button" data-s="All" aria-pressed="true">All</button>
+      <button type="button" data-s="Men" aria-pressed="false"><i style="background:var(--men)"></i>Men's</button>
+      <button type="button" data-s="Women" aria-pressed="false"><i style="background:var(--women)"></i>Women's</button>
+    </div>
+    <div class="fg"><label for="y0">From</label><select id="y0"></select></div>
+    <div class="fg"><label for="y1">To</label><select id="y1"></select></div>
+  </nav>
+
+  <section class="grid">
+    <article class="panel s12">
+      <div class="clockwrap">
+        <div id="clock"></div>
+        <div>
+          <div class="eyebrow">01 · The goal clock</div>
+          <div class="callout" id="clock-callout">–</div>
+          <p class="sub" style="margin-top:12px">Each spoke is a three-minute window of the match; its length is the number of goals scored in it. The red spokes are stoppage time at the end of each half. Extra time sits outside the clock.</p>
+          <div class="facts" id="facts"></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="panel s7">
+      <div class="eyebrow">02 · Scoring over time</div>
+      <h2>Goals per match</h2>
+      <p class="sub">Men's World Cup scoring peaked in 1954 and bottomed out in 1990, the tournament that pushed FIFA to change the back-pass rule. Click a point to focus the page on that tournament.</p>
+      <div class="legend"><span><i style="background:var(--men)"></i>Men's</span><span><i style="background:var(--women)"></i>Women's</span></div>
+      <div id="trend"></div>
+    </article>
+
+    <article class="panel s5">
+      <div class="eyebrow">03 · Home advantage</div>
+      <h2>How far hosts go</h2>
+      <p class="sub" id="host-sub">–</p>
+      <div id="hosts"></div>
+    </article>
+
+    <article class="panel s12">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+        <div><div class="eyebrow">04 · Nation explorer</div><h2 id="team-title">Team record</h2></div>
+        <div class="fg"><label for="team">Team</label><select id="team"></select></div>
+      </div>
+      <div class="teamk" id="teamk"></div>
+      <div id="team-chart"></div>
+    </article>
+
+    <article class="panel s12">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+        <div><div class="eyebrow">05 · Records</div><h2>The matches people still talk about</h2></div>
+        <div class="seg" role="group" aria-label="Record type" id="recseg"><button type="button" data-r="Most goals" aria-pressed="true">Most goals</button><button type="button" data-r="Biggest margin" aria-pressed="false">Biggest margin</button></div>
+      </div>
+      <div class="tablewrap"><table id="records"></table></div>
+    </article>
+
+    <article class="panel s12">
+      <div class="eyebrow">06 · Data notes</div>
+      <h2>What was cleaned</h2>
+      <div class="tablewrap"><table id="log"></table></div>
+    </article>
+  </section>
+  <footer>Data: Fjelstul World Cup Database, © 2023 Joshua C. Fjelstul, Ph.D., <a href="https://github.com/jfjelstul/worldcup" target="_blank" rel="noopener">github.com/jfjelstul/worldcup</a>, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank" rel="noopener">CC-BY-SA 4.0</a>. Modified: stage names standardised and tables aggregated. Analysis and dashboard by Qais Adeniji-Bello; derived data shared under the same licence.</footer>
+</div>
+<div class="tip" id="tip"></div>
+
+<script>
+const SOURCE={repo:"QaisBello/world-cup-analysis",branch:"main",dir:"data/cleaned"};
+const FALLBACKS=/*FALLBACKS*/["../data/cleaned/"];
+const RAW=f=>`https://raw.githubusercontent.com/${SOURCE.repo}/${SOURCE.branch}/${SOURCE.dir}/${f}`;
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt=d3.format(","), pct=v=>`${Math.round(v*100)}%`;
+let T=[],GM=[],TT=[],TOP=[],LOG=[]; const F={sex:"All",y0:1930,y1:2022,rec:"Most goals",team:"Brazil"};
+const tip=document.getElementById("tip"); const showTip=(e,h)=>{tip.innerHTML=h;tip.style.opacity=1;tip.style.left=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8)+"px";tip.style.top=(e.clientY+14)+"px";}; const hideTip=()=>tip.style.opacity=0;
+const inSex=r=>F.sex==="All"||r.sex===F.sex, inYr=r=>r.year>=F.y0&&r.year<=F.y1;
+const col=s=>s==="Men"?css("--men"):s==="Women"?css("--women"):css("--all");
+
+function kpis(){
+  const t=T.filter(r=>inSex(r)&&inYr(r)); const g=d3.sum(t,r=>r.goals), m=d3.sum(t,r=>r.matches);
+  const K=[["Tournaments",t.length,`${t.filter(r=>r.sex==="Men").length} men's · ${t.filter(r=>r.sex==="Women").length} women's`],["Matches",fmt(m),`${F.y0}–${F.y1}`],["Goals",fmt(g),`${fmt(d3.sum(t,r=>r.penalty_goals))} penalties · ${fmt(d3.sum(t,r=>r.own_goals))} own goals`],["Goals per match",m?(g/m).toFixed(2):"–",`${fmt(d3.sum(t,r=>r.shootouts))} shootouts`]];
+  document.getElementById("kpis").innerHTML=K.map(([k,v,s])=>`<div class="kpi" style="border-bottom:1px solid var(--rule)"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join("");
+}
+
+function clock(){
+  const host=document.getElementById("clock"); host.innerHTML="";
+  const g=GM.filter(r=>inSex(r)&&inYr(r)&&!r.period.startsWith("extra"));
+  const reg=b=>g.filter(r=>!r.stoppage&&r.minute_regulation>b*3&&r.minute_regulation<=b*3+3);
+  // 30 regulation buckets + 2 stoppage buckets inserted after 45' (index 15) and 90' (index 30)
+  const slots=[]; for(let b=0;b<30;b++){ slots.push({lab:`${b*3+1}–${b*3+3}'`,n:d3.sum(reg(b),r=>r.goals),stop:false,min:b*3+3}); if(b===14) slots.push({lab:"45+'",n:d3.sum(g.filter(r=>r.stoppage&&r.period==="first half"),r=>r.goals),stop:true,min:45}); }
+  slots.push({lab:"90+'",n:d3.sum(g.filter(r=>r.stoppage&&r.period==="second half"),r=>r.goals),stop:true,min:90});
+  const W=Math.min(Math.max(host.clientWidth,280),560), H=W, R=W/2-34, r0=R*.32;
+  const svg=d3.select(host).append("svg").attr("viewBox",`0 0 ${W} ${H}`).attr("width",W).attr("height",H).attr("role","img").attr("aria-label","Goals by minute, drawn as a clock");
+  const c=svg.append("g").attr("transform",`translate(${W/2},${H/2})`);
+  c.append("circle").attr("r",R+6).attr("fill",css("--pitch"));
+  c.append("circle").attr("r",r0-4).attr("fill","none").attr("stroke",css("--line-w")).attr("stroke-width",2);
+  const n=slots.length, max=d3.max(slots,s=>s.n)||1, rs=d3.scaleSqrt().domain([0,max]).range([r0,R]);
+  const a0=i=>i/n*2*Math.PI, arc=d3.arc().innerRadius(r0).padAngle(.012).cornerRadius(2);
+  [0.25,.5,.75,1].forEach(f=>c.append("circle").attr("r",rs(max*f)).attr("fill","none").attr("stroke",css("--line-w")).attr("stroke-dasharray","2 3"));
+  const base=F.sex==="All"?css("--ink-2"):col(F.sex);
+  c.selectAll("path.sp").data(slots).join("path").attr("class","sp")
+    .attr("d",(s,i)=>arc({startAngle:a0(i),endAngle:a0(i+1),outerRadius:rs(s.n)})).attr("fill",s=>s.stop?css("--stop"):base).attr("opacity",s=>s.stop?1:.82)
+    .on("mousemove",(e,s)=>showTip(e,`<b>${s.lab}</b><br>${fmt(s.n)} goals`)).on("mouseleave",hideTip);
+  [[0,"KICK-OFF"],[16,"HALF-TIME"],[n,"FULL TIME"]].forEach(([i,t],k)=>{ const a=a0(i)-Math.PI/2, rr=R+20;
+    c.append("line").attr("x1",Math.cos(a)*(r0-6)).attr("y1",Math.sin(a)*(r0-6)).attr("x2",Math.cos(a)*(R+10)).attr("y2",Math.sin(a)*(R+10)).attr("stroke",css("--muted")).attr("stroke-width",1);
+    if(k<2) c.append("text").attr("x",Math.cos(a)*rr).attr("y",Math.sin(a)*rr+(k===0?-2:10)).attr("text-anchor","middle").style("font-size","10px").text(t);});
+  [[30,"30'"],[60,"60'"]].forEach(([m,t])=>{const i=m/3+(m>45?1:0), a=a0(i)-Math.PI/2; c.append("text").attr("x",Math.cos(a)*(R+18)).attr("y",Math.sin(a)*(R+18)).attr("dy",".35em").attr("text-anchor","middle").text(t);});
+  const tot=d3.sum(slots,s=>s.n);
+  c.append("text").attr("text-anchor","middle").attr("dy","-.2em").style("font-family","var(--display)").style("font-size","30px").style("font-weight",800).style("fill",css("--ink")).text(fmt(tot));
+  c.append("text").attr("text-anchor","middle").attr("dy","1.4em").text("goals in 90'");
+  // callout + facts
+  const last15=d3.sum(slots.filter(s=>(s.min>75&&!s.stop)||s.lab==="90+'"),s=>s.n), first15=d3.sum(slots.filter(s=>s.min<=15&&!s.stop),s=>s.n);
+  const stopN=d3.sum(slots.filter(s=>s.stop),s=>s.n);
+  document.getElementById("clock-callout").innerHTML=tot?`<em>${pct(last15/tot)}</em> of goals come in the last 15 minutes.`:"No goals in this selection.";
+  const modern=GM.filter(r=>inSex(r)&&r.year>=Math.max(1998,F.y0)&&r.year<=F.y1&&!r.period.startsWith("extra")), mt=d3.sum(modern,r=>r.goals), ms=d3.sum(modern.filter(r=>r.stoppage),r=>r.goals);
+  const et=d3.sum(GM.filter(r=>inSex(r)&&inYr(r)&&r.period.startsWith("extra")),r=>r.goals);
+  document.getElementById("facts").innerHTML=[
+    (()=>{const Q=[["1'–15'",s=>!s.stop&&s.min<=15],["16'–30'",s=>!s.stop&&s.min>15&&s.min<=30],["31'–45'+",s=>(s.min>30&&s.min<=45)],["46'–60'",s=>!s.stop&&s.min>45&&s.min<=60],["61'–75'",s=>!s.stop&&s.min>60&&s.min<=75]].map(([l,f])=>[l,d3.sum(slots.filter(f),s=>s.n)]);
+      const q=Q.reduce((a,b)=>b[1]<a[1]?b:a); return [pct(q[1]/(tot||1)), `in ${q[0]}, the quietest quarter-hour. An even spread would give each one 17%.`];})(),
+    [mt?pct(ms/mt):"–", `of goals since ${Math.max(1998,F.y0)} came in stoppage time (recorded consistently from 1998).`],
+    [fmt(et), "goals in extra time, not shown on the clock."]
+  ].map(([b,s])=>`<div class="fact"><b>${b}</b><span>${s}</span></div>`).join("");
+}
+
+function trend(){
+  const host=document.getElementById("trend"); host.innerHTML="";
+  const W=Math.max(host.clientWidth,300), H=280, m={l:40,r:16,t:16,b:28};
+  const x=d3.scaleLinear().domain([1930,2022]).range([m.l,W-m.r]), y=d3.scaleLinear().domain([0,6]).range([H-m.b,m.t]);
+  const svg=d3.select(host).append("svg").attr("viewBox",`0 0 ${W} ${H}`).attr("width",W).attr("height",H);
+  svg.append("rect").attr("x",x(F.y0)).attr("width",Math.max(0,x(F.y1)-x(F.y0))).attr("y",m.t).attr("height",H-m.t-m.b).attr("fill",css("--pitch"));
+  svg.append("g").attr("class","gl").attr("transform",`translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickSize(-(W-m.l-m.r)).tickFormat(""));
+  svg.append("g").attr("class","axis").attr("transform",`translate(0,${H-m.b})`).call(d3.axisBottom(x).ticks(W<500?5:10).tickFormat(d3.format("d")).tickSizeOuter(0));
+  svg.append("g").attr("class","axis").attr("transform",`translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6)).call(g=>g.select(".domain").remove());
+  ["Men","Women"].forEach(s=>{ if(F.sex!=="All"&&F.sex!==s) return; const d=T.filter(r=>r.sex===s).sort((a,b)=>a.year-b.year);
+    svg.append("path").datum(d).attr("fill","none").attr("stroke",col(s)).attr("stroke-width",2).attr("d",d3.line().x(r=>x(r.year)).y(r=>y(r.goals_per_match)));
+    svg.selectAll(null).data(d).join("circle").attr("cx",r=>x(r.year)).attr("cy",r=>y(r.goals_per_match)).attr("r",r=>inYr(r)?4.5:3).attr("fill",col(s)).attr("stroke",css("--card")).attr("stroke-width",1.5).style("cursor","pointer")
+      .on("mousemove",(e,r)=>showTip(e,`<b>${r.year} ${r.sex}'s · ${r.host_country}</b><br>${r.goals_per_match.toFixed(2)} goals/match<br>${r.goals} goals in ${r.matches} matches<br>Winner: ${r.winner}<br><span style="opacity:.7">Click to focus on this tournament</span>`)).on("mouseleave",hideTip)
+      .on("click",(e,r)=>{ if(F.y0===r.year&&F.y1===r.year){F.y0=1930;F.y1=2022;} else {F.y0=r.year;F.y1=r.year;} F.sex=r.sex; render(); });
+  });
+  const ann=[[1954,"Men",5.385,"1954 · 5.38"],[1990,"Men",2.212,"1990 · 2.21"]];
+  ann.forEach(([yr,s,v,t])=>{ if(F.sex!=="All"&&F.sex!==s)return; svg.append("text").attr("x",x(yr)+8).attr("y",y(v)+(v>4?-6:16)).style("fill",css("--ink")).text(t); });
+}
+
+function hosts(){
+  const host=document.getElementById("hosts"); host.innerHTML="";
+  const ORDER=["group stage","second group stage","round of 16","quarter-finals","fourth place","third place","runners-up","champions"];
+  const LAB={"group stage":"Group","second group stage":"2nd group","round of 16":"Last 16","quarter-finals":"Quarters","fourth place":"4th","third place":"3rd","runners-up":"Final","champions":"Won"};
+  const d=T.filter(r=>inSex(r)&&r.host_result);
+  const won=d.filter(r=>r.host_result==="champions").length, semis=d.filter(r=>ORDER.indexOf(r.host_result)>=4).length;
+  document.getElementById("host-sub").innerHTML=d.length?`Hosts won <b>${won} of ${d.length}</b> tournaments and reached the last four <b>${semis}</b> times. With ${Math.round(d3.mean(d,r=>r.count_teams))} teams on average, a random team would win about one in ${Math.round(d3.mean(d,r=>r.count_teams))}.`:"–";
+  const W=Math.max(host.clientWidth,280), H=300, m={l:64,r:12,t:10,b:26};
+  const x=d3.scaleLinear().domain([1928,2024]).range([m.l,W-m.r]), y=d3.scalePoint().domain(ORDER).range([H-m.b,m.t]).padding(.4);
+  const svg=d3.select(host).append("svg").attr("viewBox",`0 0 ${W} ${H}`).attr("width",W).attr("height",H);
+  ORDER.forEach(o=>{svg.append("line").attr("x1",m.l).attr("x2",W-m.r).attr("y1",y(o)).attr("y2",y(o)).attr("stroke",css("--rule")); svg.append("text").attr("x",m.l-8).attr("y",y(o)).attr("dy",".35em").attr("text-anchor","end").text(LAB[o]);});
+  svg.append("g").attr("class","axis").attr("transform",`translate(0,${H-m.b})`).call(d3.axisBottom(x).ticks(5).tickFormat(d3.format("d")).tickSizeOuter(0));
+  svg.selectAll(null).data(d).join("circle").attr("cx",r=>x(r.year)).attr("cy",r=>y(r.host_result)).attr("r",6).attr("fill",r=>col(r.sex)).attr("opacity",r=>inYr(r)?1:.3).attr("stroke",css("--card")).attr("stroke-width",1.5)
+    .on("mousemove",(e,r)=>showTip(e,`<b>${r.host_country}</b>, ${r.year} ${r.sex}'s<br>Result: ${r.host_result}`)).on("mouseleave",hideTip);
+}
+
+function team(){
+  const sel=document.getElementById("team");
+  const d=TT.filter(r=>r.team_name===F.team&&inSex(r)).sort((a,b)=>a.year-b.year);
+  document.getElementById("team-title").textContent=`${F.team}${F.sex!=="All"?` · ${F.sex}'s`:""}`;
+  const P=d3.sum(d,r=>r.played), Wn=d3.sum(d,r=>r.won), titles=d.filter(r=>r.champion).length, best=d.reduce((a,b)=>(b.stage_rank+(b.champion?1:0))>(a?a.stage_rank+(a.champion?1:0):-1)?b:a,null);
+  document.getElementById("teamk").innerHTML=[[d.length,"tournaments"],[`${Wn}–${d3.sum(d,r=>r.drawn)}–${d3.sum(d,r=>r.lost)}`,"won–drawn–lost"],[`${d3.sum(d,r=>r.goals_for)}:${d3.sum(d,r=>r.goals_against)}`,"goals for:against"],[titles?`${titles} title${titles>1?"s":""}`:(best?best.finish:"–"),titles?"world champions":"best finish"]]
+    .map(([b,s])=>`<div><b>${b}</b><span>${s}</span></div>`).join("");
+  const host=document.getElementById("team-chart"); host.innerHTML="";
+  const W=Math.max(host.clientWidth,300), H=230, m={l:110,r:16,t:12,b:26};
+  const ST=["Group stage","Second round","Round of 16","Quarter-finals","Semi-finals","Runners-up","Champions"];
+  const x=d3.scaleLinear().domain([1928,2024]).range([m.l,W-m.r]), y=d3.scalePoint().domain(ST).range([H-m.b,m.t]).padding(.4);
+  const svg=d3.select(host).append("svg").attr("viewBox",`0 0 ${W} ${H}`).attr("width",W).attr("height",H);
+  ST.forEach(o=>{svg.append("line").attr("x1",m.l).attr("x2",W-m.r).attr("y1",y(o)).attr("y2",y(o)).attr("stroke",css("--rule")); svg.append("text").attr("x",m.l-8).attr("y",y(o)).attr("dy",".35em").attr("text-anchor","end").text(o);});
+  svg.append("g").attr("class","axis").attr("transform",`translate(0,${H-m.b})`).call(d3.axisBottom(x).ticks(W<500?5:10).tickFormat(d3.format("d")).tickSizeOuter(0));
+  ["Men","Women"].forEach(s=>{const ds=d.filter(r=>r.sex===s); if(ds.length>1) svg.append("path").datum(ds).attr("fill","none").attr("stroke",col(s)).attr("stroke-width",1.2).attr("opacity",.5).attr("d",d3.line().x(r=>x(r.year)).y(r=>y(r.finish)));});
+  svg.selectAll(null).data(d).join("circle").attr("cx",r=>x(r.year)).attr("cy",r=>y(r.finish)).attr("r",r=>r.champion?8:5.5).attr("fill",r=>col(r.sex)).attr("stroke",r=>r.champion?css("--ink"):css("--card")).attr("stroke-width",r=>r.champion?2:1.5)
+    .on("mousemove",(e,r)=>showTip(e,`<b>${r.year} ${r.sex}'s</b><br>${r.finish}<br>${r.won}–${r.drawn}–${r.lost} · ${r.goals_for}:${r.goals_against}`)).on("mouseleave",hideTip);
+  if(!d.length) host.innerHTML=`<p class="sub">${F.team} has no ${F.sex.toLowerCase()}'s World Cup appearances.</p>`;
+}
+
+function records(){
+  const d=TOP.filter(r=>r.list===F.rec&&inSex(r)&&r.year>=F.y0&&r.year<=F.y1).slice(0,10);
+  document.querySelectorAll("#recseg button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.r===F.rec)));
+  document.getElementById("records").innerHTML=`<thead><tr><th>Tournament</th><th>Stage</th><th style="text-align:right">Home</th><th style="text-align:center">Score</th><th>Away</th></tr></thead><tbody>`+
+    (d.length?d.map(r=>`<tr><td><span style="color:${col(r.sex)}">●</span> ${r.year} ${r.sex}'s</td><td>${r.stage_name}${+r.extra_time?" (a.e.t.)":""}</td><td style="text-align:right">${r.home_team_name}</td><td class="sc">${r.home_team_score}–${r.away_team_score}</td><td>${r.away_team_name}</td></tr>`).join(""):`<tr><td colspan="5">No record matches in this selection.</td></tr>`)+"</tbody>";
+}
+function logTable(){document.getElementById("log").innerHTML=`<thead><tr><th>Check</th><th style="text-align:right">Rows</th><th>Finding</th><th>Action</th></tr></thead><tbody>`+LOG.map(r=>`<tr><td>${r.check}</td><td style="text-align:right;font-family:var(--mono)">${fmt(+r.rows_affected)}</td><td>${r.finding}</td><td>${r.action}</td></tr>`).join("")+"</tbody>";}
+
+function sync(){
+  document.querySelectorAll("#sexseg button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.s===F.sex)));
+  document.getElementById("y0").value=F.y0; document.getElementById("y1").value=F.y1;
+}
+function render(){ sync(); kpis(); clock(); trend(); hosts(); team(); records(); }
+
+async function get(f){for(const [u,k] of [[RAW(f),"live"],...FALLBACKS.map(p=>[p+f,"snapshot"])]){try{const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw 0;return {t:await r.text(),k};}catch(e){}}throw new Error(f);}
+async function boot(){
+  const src=document.getElementById("src");
+  try{
+    const [t,g,tt,top,lg]=await Promise.all(["tournaments.csv","goal_minutes.csv","team_tournaments.csv","top_matches.csv","data_quality_log.csv"].map(get));
+    const num=r=>{for(const k in r){if(r[k]!==""&&!isNaN(+r[k])&&!["team_code"].includes(k))r[k]=+r[k];} if(r.stoppage!==undefined)r.stoppage=r.stoppage==="True"||r.stoppage===1; if(r.champion!==undefined)r.champion=r.champion==="True"||r.champion===1; return r;};
+    T=d3.csvParse(t.t,num); GM=d3.csvParse(g.t,num); TT=d3.csvParse(tt.t,num); LOG=d3.csvParse(lg.t);
+    TOP=d3.csvParse(top.t,num).map(r=>({...r,year:+String(r.tournament_name).slice(0,4)}));
+    src.innerHTML=t.k==="live"?`<span class="dot live"></span>Live from <a href="https://github.com/${SOURCE.repo}" target="_blank" rel="noopener">github.com/${SOURCE.repo}</a> · ${fmt(d3.sum(T,r=>r.goals))} goals`:`<span class="dot"></span>Bundled snapshot · ${fmt(d3.sum(T,r=>r.goals))} goals`;
+    const years=[...new Set(T.map(r=>r.year))].sort((a,b)=>a-b);
+    ["y0","y1"].forEach(id=>{const s=document.getElementById(id); s.innerHTML=years.map(y=>`<option value="${y}">${y}</option>`).join(""); s.onchange=()=>{F[id]=+s.value; if(F.y0>F.y1){ if(id==="y0")F.y1=F.y0; else F.y0=F.y1;} render();};});
+    const teams=d3.rollups(TT,v=>v.length,r=>r.team_name).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+    const ts=document.getElementById("team"); ts.innerHTML=teams.map(([n,c])=>`<option value="${n}">${n} (${c})</option>`).join(""); ts.value=F.team; ts.onchange=()=>{F.team=ts.value;team();};
+    document.querySelectorAll("#sexseg button").forEach(b=>b.onclick=()=>{F.sex=b.dataset.s;render();});
+    document.querySelectorAll("#recseg button").forEach(b=>b.onclick=()=>{F.rec=b.dataset.r;records();});
+    logTable(); render();
+  }catch(e){src.innerHTML=`<span class="dot" style="background:var(--stop)"></span>Couldn't load the data. Refresh to try again.`;}
+}
+boot();
+let rt; addEventListener("resize",()=>{if(!T.length)return;clearTimeout(rt);rt=setTimeout(render,150);});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>T.length&&render());
+new MutationObserver(()=>T.length&&render()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+</script>

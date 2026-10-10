@@ -1,0 +1,31 @@
+list,sex,tournament_name,match_date,stage_name,home_team_name,home_team_score,away_team_score,away_team_name,total,margin,extra_time
+Most goals,Women,2019 FIFA Women's World Cup,2019-06-11,group stage,United States,13,0,Thailand,13,13,0
+Most goals,Men,1954 FIFA Men's World Cup,1954-06-26,quarter-finals,Austria,7,5,Switzerland,12,2,0
+Most goals,Women,2007 FIFA Women's World Cup,2007-09-10,group stage,Germany,11,0,Argentina,11,11,0
+Most goals,Men,1982 FIFA Men's World Cup,1982-06-15,group stage,Hungary,10,1,El Salvador,11,9,0
+Most goals,Women,2015 FIFA Women's World Cup,2015-06-12,group stage,Switzerland,10,1,Ecuador,11,9,0
+Most goals,Men,1954 FIFA Men's World Cup,1954-06-20,group stage,Hungary,8,3,West Germany,11,5,0
+Most goals,Men,1938 FIFA Men's World Cup,1938-06-05,round of 16,Brazil,6,5,Poland,11,1,1
+Most goals,Women,2015 FIFA Women's World Cup,2015-06-07,group stage,Germany,10,0,Ivory Coast,10,10,0
+Most goals,Men,1958 FIFA Men's World Cup,1958-06-08,group stage,France,7,3,Paraguay,10,4,0
+Most goals,Men,1954 FIFA Men's World Cup,1954-06-17,group stage,Hungary,9,0,South Korea,9,9,0
+Most goals,Men,1974 FIFA Men's World Cup,1974-06-18,group stage,Yugoslavia,9,0,Zaire,9,9,0
+Most goals,Men,1954 FIFA Men's World Cup,1954-06-23,group stage,West Germany,7,2,Turkey,9,5,0
+Most goals,Women,2007 FIFA Women's World Cup,2007-09-20,group stage,Norway,7,2,Ghana,9,5,0
+Most goals,Men,1930 FIFA Men's World Cup,1930-07-19,group stage,Argentina,6,3,Mexico,9,3,0
+Most goals,Men,1958 FIFA Men's World Cup,1958-06-28,third-place match,France,6,3,West Germany,9,3,0
+Biggest margin,Women,2019 FIFA Women's World Cup,2019-06-11,group stage,United States,13,0,Thailand,13,13,0
+Biggest margin,Women,2007 FIFA Women's World Cup,2007-09-10,group stage,Germany,11,0,Argentina,11,11,0
+Biggest margin,Women,2015 FIFA Women's World Cup,2015-06-07,group stage,Germany,10,0,Ivory Coast,10,10,0
+Biggest margin,Men,1982 FIFA Men's World Cup,1982-06-15,group stage,Hungary,10,1,El Salvador,11,9,0
+Biggest margin,Women,2015 FIFA Women's World Cup,2015-06-12,group stage,Switzerland,10,1,Ecuador,11,9,0
+Biggest margin,Men,1954 FIFA Men's World Cup,1954-06-17,group stage,Hungary,9,0,South Korea,9,9,0
+Biggest margin,Men,1974 FIFA Men's World Cup,1974-06-18,group stage,Yugoslavia,9,0,Zaire,9,9,0
+Biggest margin,Men,1938 FIFA Men's World Cup,1938-06-12,quarter-finals,Sweden,8,0,Cuba,8,8,0
+Biggest margin,Men,1950 FIFA Men's World Cup,1950-07-02,group stage,Uruguay,8,0,Bolivia,8,8,0
+Biggest margin,Women,1991 FIFA Women's World Cup,1991-11-19,group stage,Japan,0,8,Sweden,8,8,0
+Biggest margin,Women,1995 FIFA Women's World Cup,1995-06-06,group stage,Norway,8,0,Nigeria,8,8,0
+Biggest margin,Men,2002 FIFA Men's World Cup,2002-06-01,group stage,Germany,8,0,Saudi Arabia,8,8,0
+Biggest margin,Men,1954 FIFA Men's World Cup,1954-06-19,group stage,Uruguay,7,0,Scotland,7,7,0
+Biggest margin,Men,1954 FIFA Men's World Cup,1954-06-20,group stage,Turkey,7,0,South Korea,7,7,0
+Biggest margin,Men,1974 FIFA Men's World Cup,1974-06-19,group stage,Haiti,0,7,Poland,7,7,0

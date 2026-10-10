@@ -1,0 +1,7 @@
+check,rows_affected,finding,action
+Load,1248,"30 tournaments (1930–2022), 1,248 matches, 3,637 goals, 2,496 team-match rows.",Read the Fjelstul World Cup Database CSVs.
+Stage names,149,"The same stage is written as 'quarter-final', 'quarter-finals' and 'quater-finals' (typo), and 'semi-final' vs 'semi-finals'.",Mapped to one spelling each.
+Replayed matches,4,Four drawn matches (1934–1938) were replayed. Both the original and the replay are real matches.,Kept both; counted as separate matches.
+Stoppage-time minutes,165,"Stoppage minutes first appear in 1990 and only sporadically before 1998 (1990: 4, 1994: 3, 1995: 6); earlier added-time goals are logged as 45' or 90'.","Stoppage-time figures use 1998 onwards, where recording is consistent."
+Own goals,79,Own goals are already credited to the team that benefited.,Counted for that team; flagged in minute data.
+Team names,88,"Teams are kept as the database names them, so West Germany and Germany are separate, as are the Soviet Union and Russia.",No merging; the dashboard notes it.

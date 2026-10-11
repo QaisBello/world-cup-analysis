@@ -41,6 +41,10 @@ The original version's attendance analysis isn't reproduced, because attendance 
 
 Sourcing and citing open data · data cleaning and standardisation · Python (pandas) · data modelling · custom visualisation (radial "goal clock", D3.js) · cross-filtered dashboards · honest caveats about historical recording
 
+## Power BI version
+
+The same project as a ready-made Power BI report, in [`powerbi/`](powerbi/): a goal clock (share of goals by quarter-hour), every tournament and its host, and a nation explorer. `powerbi/tools/expected.py` recomputes the findings above and they all agree. Open `powerbi/World_Cup.pbip` in Power BI Desktop and click Refresh; it reads this repo's data from GitHub.
+
 ## Run it
 
 ```bash

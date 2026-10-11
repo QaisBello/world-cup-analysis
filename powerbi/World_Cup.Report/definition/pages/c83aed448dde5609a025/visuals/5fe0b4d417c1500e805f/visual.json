@@ -1,0 +1,161 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "5fe0b4d417c1500e805f",
+  "position": {
+    "x": 800,
+    "y": 184,
+    "z": 11,
+    "width": 456,
+    "height": 524,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Records"
+                    }
+                  },
+                  "Property": "list"
+                }
+              },
+              "queryRef": "Records.list",
+              "nativeQueryRef": "list",
+              "displayName": "Record"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Records"
+                    }
+                  },
+                  "Property": "tournament_name"
+                }
+              },
+              "queryRef": "Records.tournament_name",
+              "nativeQueryRef": "tournament_name",
+              "displayName": "Tournament"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Records"
+                    }
+                  },
+                  "Property": "home_team_name"
+                }
+              },
+              "queryRef": "Records.home_team_name",
+              "nativeQueryRef": "home_team_name",
+              "displayName": "Home"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Records"
+                    }
+                  },
+                  "Property": "home_team_score"
+                }
+              },
+              "queryRef": "Records.home_team_score",
+              "nativeQueryRef": "home_team_score",
+              "displayName": "Home goals"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Records"
+                    }
+                  },
+                  "Property": "away_team_score"
+                }
+              },
+              "queryRef": "Records.away_team_score",
+              "nativeQueryRef": "away_team_score",
+              "displayName": "Away goals"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Records"
+                    }
+                  },
+                  "Property": "away_team_name"
+                }
+              },
+              "queryRef": "Records.away_team_name",
+              "nativeQueryRef": "away_team_name",
+              "displayName": "Away"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Records"
+                  }
+                },
+                "Property": "home_team_score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Records: most goals and biggest margins'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

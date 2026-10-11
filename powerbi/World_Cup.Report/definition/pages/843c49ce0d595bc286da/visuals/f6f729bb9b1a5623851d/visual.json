@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "f6f729bb9b1a5623851d",
+  "position": {
+    "x": 24,
+    "y": 12,
+    "z": 0,
+    "width": 860,
+    "height": 52,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "World Cup, by the minute: when goals come",
+                    "textStyle": {
+                      "fontSize": "18pt",
+                      "color": "#13201B",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

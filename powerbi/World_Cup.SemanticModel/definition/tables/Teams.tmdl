@@ -1,0 +1,154 @@
+/// Every team at every tournament: record, goals and how far it went.
+table Teams
+
+	/// Tournaments played.
+	measure Appearances = COUNTROWS ( Teams )
+		formatString: #,0
+		displayFolder: Nations
+
+	/// World Cups won.
+	measure Titles = CALCULATE ( COUNTROWS ( Teams ), Teams[champion] == TRUE () ) + 0
+		formatString: #,0
+		displayFolder: Nations
+
+	/// Matches won.
+	measure Wins = SUM ( Teams[won] )
+		formatString: #,0
+		displayFolder: Nations
+
+	/// Goals for minus against.
+	measure 'Goal Difference' = SUM ( Teams[goals_for] ) - SUM ( Teams[goals_against] )
+		formatString: +#,0;-#,0;0
+		displayFolder: Nations
+
+	column tournament_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: tournament_id
+
+	column sex
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: sex
+
+	column team_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: team_name
+
+	column team_code
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: team_code
+
+	column played
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: played
+
+	column won
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: won
+
+	column drawn
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: drawn
+
+	column lost
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: lost
+
+	column goals_for
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: goals_for
+
+	column goals_against
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: goals_against
+
+	column stage_rank
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: stage_rank
+
+	column year
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: year
+
+	column champion
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: champion
+
+	column finish
+		dataType: string
+		summarizeBy: none
+		sourceColumn: finish
+		sortByColumn: 'Finish Order'
+
+	column 'Finish Order'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: Finish Order
+
+	partition Teams = m
+		mode: import
+		source = ```
+				let
+				    Source = Csv.Document(
+				        Web.Contents(BaseUrl, [RelativePath = "team_tournaments.csv"]),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    // empty cells and R's NA arrive as text and would fail the type change: make them null
+				    #"Blanks to Null" = Table.TransformColumns(#"Promoted Headers", {}, each if _ = "" or _ = "NA" then null else _),
+				    // True/TRUE/true all become true: pandas writes True, R writes TRUE
+				    #"Booleans" = Table.TransformColumns(#"Blanks to Null", {{"champion", each if _ = null then null else Text.Lower(_)}}),
+				    #"Changed Types" = Table.TransformColumnTypes(
+				        #"Booleans",
+				        {
+				            {"tournament_id", type text},
+				            {"sex", type text},
+				            {"team_name", type text},
+				            {"team_code", type text},
+				            {"played", Int64.Type},
+				            {"won", Int64.Type},
+				            {"drawn", Int64.Type},
+				            {"lost", Int64.Type},
+				            {"goals_for", Int64.Type},
+				            {"goals_against", Int64.Type},
+				            {"stage_rank", Int64.Type},
+				            {"year", Int64.Type},
+				            {"champion", type logical},
+				            {"finish", type text}
+				        },
+				        "en-US"
+				    ),
+				    #"Filtered Rows" = #"Changed Types",
+				    #"Finish Order" = Table.AddColumn(#"Filtered Rows", "Finish Order", each List.PositionOf(
+				        {"Group stage", "Second round", "Round of 16", "Quarter-finals", "Semi-finals", "Runners-up", "Champions"}, [finish]), Int64.Type),
+				    Result = #"Finish Order"
+				in
+				    Result
+				```
+

@@ -1,0 +1,682 @@
+{
+  "tables": [
+    {
+      "name": "Tournaments",
+      "description": "One row per tournament: 22 men's (1930-2022) and 8 women's (1991-2019), from the Fjelstul World Cup Database.",
+      "columns": [
+        {
+          "name": "tournament_id",
+          "type": "string",
+          "hidden": true,
+          "key": true
+        },
+        {
+          "name": "year",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "sex",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "host_country",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "winner",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "count_teams",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "host_won",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "matches",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "et",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "shootouts",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "draws",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "goals",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "stoppage_goals",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "penalty_goals",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "own_goals",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "et_goals",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "goals_per_match",
+          "type": "double",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "host_result",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "Tournament",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        }
+      ]
+    },
+    {
+      "name": "Goal Minutes",
+      "description": "Goals by regulation minute, stoppage flag and period for every tournament. Quarter-hour bands added in Power Query (stoppage goals fall in the band of the half they end).",
+      "columns": [
+        {
+          "name": "tournament_id",
+          "type": "string",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "sex",
+          "type": "string",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "minute_regulation",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "stoppage",
+          "type": "boolean",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "period",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "goals",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "year",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "Quarter-hour",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "Band Order",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "Normal Time",
+          "type": "boolean",
+          "hidden": true,
+          "key": false
+        }
+      ]
+    },
+    {
+      "name": "Teams",
+      "description": "Every team at every tournament: record, goals and how far it went.",
+      "columns": [
+        {
+          "name": "tournament_id",
+          "type": "string",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "sex",
+          "type": "string",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "team_name",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "team_code",
+          "type": "string",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "played",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "won",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "drawn",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "lost",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "goals_for",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "goals_against",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "stage_rank",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        },
+        {
+          "name": "year",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "champion",
+          "type": "boolean",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "finish",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "Finish Order",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        }
+      ]
+    },
+    {
+      "name": "Records",
+      "description": "Highest-scoring matches and biggest margins.",
+      "columns": [
+        {
+          "name": "list",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "sex",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "tournament_name",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "match_date",
+          "type": "dateTime",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "stage_name",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "home_team_name",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "home_team_score",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "away_team_score",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "away_team_name",
+          "type": "string",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "total",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "margin",
+          "type": "int64",
+          "hidden": false,
+          "key": false
+        },
+        {
+          "name": "extra_time",
+          "type": "int64",
+          "hidden": true,
+          "key": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "fromTable": "Goal Minutes",
+      "fromColumn": "tournament_id",
+      "toTable": "Tournaments",
+      "toColumn": "tournament_id",
+      "both": false
+    },
+    {
+      "fromTable": "Teams",
+      "fromColumn": "tournament_id",
+      "toTable": "Tournaments",
+      "toColumn": "tournament_id",
+      "both": false
+    }
+  ],
+  "measures": [
+    {
+      "name": "Total Goals",
+      "table": "Goal Minutes",
+      "folder": "Goals",
+      "format": "#,0",
+      "dax": "SUM ( 'Goal Minutes'[goals] )",
+      "description": "Goals scored, all periods."
+    },
+    {
+      "name": "Normal-Time Goals",
+      "table": "Goal Minutes",
+      "folder": "Goals",
+      "format": "#,0",
+      "dax": "CALCULATE ( [Total Goals], 'Goal Minutes'[Normal Time] == TRUE () )",
+      "description": "Goals in the 90 minutes plus stoppage time."
+    },
+    {
+      "name": "Share of Normal-Time Goals",
+      "table": "Goal Minutes",
+      "folder": "Goals",
+      "format": "0%",
+      "dax": "DIVIDE (\n    [Normal-Time Goals],\n    CALCULATE ( [Normal-Time Goals], REMOVEFILTERS ( 'Goal Minutes'[Quarter-hour], 'Goal Minutes'[Band Order] ) )\n)",
+      "description": "Share of normal-time goals in each quarter-hour (an even spread would be 17% each)."
+    },
+    {
+      "name": "Even Spread",
+      "table": "Goal Minutes",
+      "folder": "Goals",
+      "format": "0%",
+      "dax": "1 / 6",
+      "description": "Reference line: one sixth of goals per quarter-hour."
+    },
+    {
+      "name": "Last 15 Minutes Share",
+      "table": "Goal Minutes",
+      "folder": "Goals",
+      "format": "0%",
+      "dax": "DIVIDE (\n    CALCULATE ( [Normal-Time Goals], 'Goal Minutes'[Band Order] = 6 ),\n    [Normal-Time Goals]\n)",
+      "description": "Share of normal-time goals from the 76th minute on, including stoppage time."
+    },
+    {
+      "name": "First 15 Minutes Share",
+      "table": "Goal Minutes",
+      "folder": "Goals",
+      "format": "0%",
+      "dax": "DIVIDE ( CALCULATE ( [Normal-Time Goals], 'Goal Minutes'[Band Order] = 1 ), [Normal-Time Goals] )",
+      "description": "Share of normal-time goals in the opening 15 minutes."
+    },
+    {
+      "name": "Tournaments Count",
+      "table": "Tournaments",
+      "folder": "Tournaments",
+      "format": "#,0",
+      "dax": "COUNTROWS ( Tournaments )",
+      "description": "Tournaments in context."
+    },
+    {
+      "name": "Matches Played",
+      "table": "Tournaments",
+      "folder": "Tournaments",
+      "format": "#,0",
+      "dax": "SUM ( Tournaments[matches] )",
+      "description": "Matches played."
+    },
+    {
+      "name": "Goals per Match",
+      "table": "Tournaments",
+      "folder": "Tournaments",
+      "format": "0.00",
+      "dax": "DIVIDE ( SUM ( Tournaments[goals] ), [Matches Played] )",
+      "description": "Goals per match."
+    },
+    {
+      "name": "Hosts Who Won",
+      "table": "Tournaments",
+      "folder": "Hosts",
+      "format": "#,0",
+      "dax": "SUM ( Tournaments[host_won] )",
+      "description": "Tournaments won by the host."
+    },
+    {
+      "name": "Hosts in Last Four",
+      "table": "Tournaments",
+      "folder": "Hosts",
+      "format": "#,0",
+      "dax": "CALCULATE ( COUNTROWS ( Tournaments ), Tournaments[host_result] IN { \"champions\", \"runners-up\", \"third place\", \"fourth place\" } )",
+      "description": "Hosts that reached the semi-finals."
+    },
+    {
+      "name": "Average Teams",
+      "table": "Tournaments",
+      "folder": "Hosts",
+      "format": "0",
+      "dax": "AVERAGE ( Tournaments[count_teams] )",
+      "description": "Teams per tournament (a random team's chance of winning is about 1 in this)."
+    },
+    {
+      "name": "Appearances",
+      "table": "Teams",
+      "folder": "Nations",
+      "format": "#,0",
+      "dax": "COUNTROWS ( Teams )",
+      "description": "Tournaments played."
+    },
+    {
+      "name": "Titles",
+      "table": "Teams",
+      "folder": "Nations",
+      "format": "#,0",
+      "dax": "CALCULATE ( COUNTROWS ( Teams ), Teams[champion] == TRUE () ) + 0",
+      "description": "World Cups won."
+    },
+    {
+      "name": "Wins",
+      "table": "Teams",
+      "folder": "Nations",
+      "format": "#,0",
+      "dax": "SUM ( Teams[won] )",
+      "description": "Matches won."
+    },
+    {
+      "name": "Goal Difference",
+      "table": "Teams",
+      "folder": "Nations",
+      "format": "+#,0;-#,0;0",
+      "dax": "SUM ( Teams[goals_for] ) - SUM ( Teams[goals_against] )",
+      "description": "Goals for minus against."
+    }
+  ],
+  "pages": [
+    {
+      "page": "Goal clock",
+      "visuals": [
+        {
+          "type": "textbox",
+          "x": 24,
+          "y": 12,
+          "width": 860,
+          "height": 52
+        },
+        {
+          "type": "slicer",
+          "x": 900,
+          "y": 8,
+          "width": 356,
+          "height": 64
+        },
+        {
+          "type": "card",
+          "x": 24,
+          "y": 76,
+          "width": 300,
+          "height": 96
+        },
+        {
+          "type": "card",
+          "x": 336,
+          "y": 76,
+          "width": 300,
+          "height": 96
+        },
+        {
+          "type": "card",
+          "x": 648,
+          "y": 76,
+          "width": 300,
+          "height": 96
+        },
+        {
+          "type": "card",
+          "x": 960,
+          "y": 76,
+          "width": 296,
+          "height": 96
+        },
+        {
+          "type": "lineClusteredColumnComboChart",
+          "x": 24,
+          "y": 184,
+          "width": 1232,
+          "height": 524
+        }
+      ]
+    },
+    {
+      "page": "Tournaments",
+      "visuals": [
+        {
+          "type": "textbox",
+          "x": 24,
+          "y": 12,
+          "width": 1232,
+          "height": 52
+        },
+        {
+          "type": "card",
+          "x": 24,
+          "y": 76,
+          "width": 400,
+          "height": 96
+        },
+        {
+          "type": "card",
+          "x": 436,
+          "y": 76,
+          "width": 400,
+          "height": 96
+        },
+        {
+          "type": "card",
+          "x": 848,
+          "y": 76,
+          "width": 408,
+          "height": 96
+        },
+        {
+          "type": "lineChart",
+          "x": 24,
+          "y": 184,
+          "width": 760,
+          "height": 524
+        },
+        {
+          "type": "tableEx",
+          "x": 800,
+          "y": 184,
+          "width": 456,
+          "height": 524
+        }
+      ]
+    },
+    {
+      "page": "Nations",
+      "visuals": [
+        {
+          "type": "textbox",
+          "x": 24,
+          "y": 12,
+          "width": 700,
+          "height": 52
+        },
+        {
+          "type": "slicer",
+          "x": 736,
+          "y": 8,
+          "width": 260,
+          "height": 64
+        },
+        {
+          "type": "slicer",
+          "x": 1008,
+          "y": 8,
+          "width": 248,
+          "height": 64
+        },
+        {
+          "type": "card",
+          "x": 24,
+          "y": 76,
+          "width": 300,
+          "height": 96
+        },
+        {
+          "type": "card",
+          "x": 336,
+          "y": 76,
+          "width": 300,
+          "height": 96
+        },
+        {
+          "type": "card",
+          "x": 648,
+          "y": 76,
+          "width": 300,
+          "height": 96
+        },
+        {
+          "type": "card",
+          "x": 960,
+          "y": 76,
+          "width": 296,
+          "height": 96
+        },
+        {
+          "type": "tableEx",
+          "x": 24,
+          "y": 184,
+          "width": 760,
+          "height": 524
+        },
+        {
+          "type": "tableEx",
+          "x": 800,
+          "y": 184,
+          "width": 456,
+          "height": 524
+        }
+      ]
+    }
+  ],
+  "base_url": "https://raw.githubusercontent.com/QaisBello/world-cup-analysis/main/data/cleaned/"
+}

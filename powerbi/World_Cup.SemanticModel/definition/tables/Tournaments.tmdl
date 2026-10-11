@@ -1,0 +1,199 @@
+/// One row per tournament: 22 men's (1930-2022) and 8 women's (1991-2019), from the Fjelstul World Cup Database.
+table Tournaments
+
+	/// Tournaments in context.
+	measure 'Tournaments Count' = COUNTROWS ( Tournaments )
+		formatString: #,0
+		displayFolder: Tournaments
+
+	/// Matches played.
+	measure 'Matches Played' = SUM ( Tournaments[matches] )
+		formatString: #,0
+		displayFolder: Tournaments
+
+	/// Goals per match.
+	measure 'Goals per Match' = DIVIDE ( SUM ( Tournaments[goals] ), [Matches Played] )
+		formatString: 0.00
+		displayFolder: Tournaments
+
+	/// Tournaments won by the host.
+	measure 'Hosts Who Won' = SUM ( Tournaments[host_won] )
+		formatString: #,0
+		displayFolder: Hosts
+
+	/// Hosts that reached the semi-finals.
+	measure 'Hosts in Last Four' = CALCULATE ( COUNTROWS ( Tournaments ), Tournaments[host_result] IN { "champions", "runners-up", "third place", "fourth place" } )
+		formatString: #,0
+		displayFolder: Hosts
+
+	/// Teams per tournament (a random team's chance of winning is about 1 in this).
+	measure 'Average Teams' = AVERAGE ( Tournaments[count_teams] )
+		formatString: 0
+		displayFolder: Hosts
+
+	column tournament_id
+		dataType: string
+		isHidden
+		isKey
+		summarizeBy: none
+		sourceColumn: tournament_id
+
+	column year
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: year
+
+	column sex
+		dataType: string
+		summarizeBy: none
+		sourceColumn: sex
+
+	column host_country
+		dataType: string
+		summarizeBy: none
+		sourceColumn: host_country
+
+	column winner
+		dataType: string
+		summarizeBy: none
+		sourceColumn: winner
+
+	column count_teams
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: count_teams
+
+	column host_won
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: host_won
+
+	column matches
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: matches
+
+	column et
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: et
+
+	column shootouts
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: shootouts
+
+	column draws
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: draws
+
+	column goals
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: goals
+
+	column stoppage_goals
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: stoppage_goals
+
+	column penalty_goals
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: penalty_goals
+
+	column own_goals
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: own_goals
+
+	column et_goals
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: et_goals
+
+	column goals_per_match
+		dataType: double
+		isHidden
+		formatString: #,0.00
+		summarizeBy: none
+		sourceColumn: goals_per_match
+
+	column host_result
+		dataType: string
+		summarizeBy: none
+		sourceColumn: host_result
+
+	column Tournament
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tournament
+		sortByColumn: year
+
+	partition Tournaments = m
+		mode: import
+		source = ```
+				let
+				    Source = Csv.Document(
+				        Web.Contents(BaseUrl, [RelativePath = "tournaments.csv"]),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    // empty cells and R's NA arrive as text and would fail the type change: make them null
+				    #"Blanks to Null" = Table.TransformColumns(#"Promoted Headers", {}, each if _ = "" or _ = "NA" then null else _),
+				    // True/TRUE/true all become true: pandas writes True, R writes TRUE
+				    #"Booleans" = Table.TransformColumns(#"Blanks to Null", {}),
+				    #"Changed Types" = Table.TransformColumnTypes(
+				        #"Booleans",
+				        {
+				            {"tournament_id", type text},
+				            {"year", Int64.Type},
+				            {"sex", type text},
+				            {"host_country", type text},
+				            {"winner", type text},
+				            {"count_teams", Int64.Type},
+				            {"host_won", Int64.Type},
+				            {"matches", Int64.Type},
+				            {"et", Int64.Type},
+				            {"shootouts", Int64.Type},
+				            {"draws", Int64.Type},
+				            {"goals", Int64.Type},
+				            {"stoppage_goals", Int64.Type},
+				            {"penalty_goals", Int64.Type},
+				            {"own_goals", Int64.Type},
+				            {"et_goals", Int64.Type},
+				            {"goals_per_match", type number},
+				            {"host_result", type text}
+				        },
+				        "en-US"
+				    ),
+				    #"Filtered Rows" = #"Changed Types",
+				    #"Tournament" = Table.AddColumn(#"Filtered Rows", "Tournament", each Text.From([year]) & " " & [sex] & "'s", type text),
+				    Result = #"Tournament"
+				in
+				    Result
+				```
+

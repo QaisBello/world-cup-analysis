@@ -1,0 +1,191 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "35637455830b5e23a526",
+  "position": {
+    "x": 24,
+    "y": 184,
+    "z": 10,
+    "width": 760,
+    "height": 524,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Teams"
+                    }
+                  },
+                  "Property": "year"
+                }
+              },
+              "queryRef": "Teams.year",
+              "nativeQueryRef": "year",
+              "displayName": "Year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Teams"
+                    }
+                  },
+                  "Property": "finish"
+                }
+              },
+              "queryRef": "Teams.finish",
+              "nativeQueryRef": "finish",
+              "displayName": "Finish"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Teams"
+                    }
+                  },
+                  "Property": "played"
+                }
+              },
+              "queryRef": "Teams.played",
+              "nativeQueryRef": "played",
+              "displayName": "P"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Teams"
+                    }
+                  },
+                  "Property": "won"
+                }
+              },
+              "queryRef": "Teams.won",
+              "nativeQueryRef": "won",
+              "displayName": "W"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Teams"
+                    }
+                  },
+                  "Property": "drawn"
+                }
+              },
+              "queryRef": "Teams.drawn",
+              "nativeQueryRef": "drawn",
+              "displayName": "D"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Teams"
+                    }
+                  },
+                  "Property": "lost"
+                }
+              },
+              "queryRef": "Teams.lost",
+              "nativeQueryRef": "lost",
+              "displayName": "L"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Teams"
+                    }
+                  },
+                  "Property": "goals_for"
+                }
+              },
+              "queryRef": "Teams.goals_for",
+              "nativeQueryRef": "goals_for",
+              "displayName": "GF"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Teams"
+                    }
+                  },
+                  "Property": "goals_against"
+                }
+              },
+              "queryRef": "Teams.goals_against",
+              "nativeQueryRef": "goals_against",
+              "displayName": "GA"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Teams"
+                  }
+                },
+                "Property": "year"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Every tournament for the selected team'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

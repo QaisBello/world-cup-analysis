@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "b3c91a8e19cf52ad931b",
+  "position": {
+    "x": 900,
+    "y": 8,
+    "z": 1800,
+    "width": 356,
+    "height": 64,
+    "tabOrder": 1800
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tournaments"
+                    }
+                  },
+                  "Property": "sex"
+                }
+              },
+              "queryRef": "Tournaments.sex",
+              "nativeQueryRef": "sex",
+              "displayName": "Men's or women's"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

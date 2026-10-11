@@ -1,0 +1,140 @@
+/// Goals by regulation minute, stoppage flag and period for every tournament. Quarter-hour bands added in Power Query (stoppage goals fall in the band of the half they end).
+table 'Goal Minutes'
+
+	/// Goals scored, all periods.
+	measure 'Total Goals' = SUM ( 'Goal Minutes'[goals] )
+		formatString: #,0
+		displayFolder: Goals
+
+	/// Goals in the 90 minutes plus stoppage time.
+	measure 'Normal-Time Goals' = CALCULATE ( [Total Goals], 'Goal Minutes'[Normal Time] == TRUE () )
+		formatString: #,0
+		displayFolder: Goals
+
+	/// Share of normal-time goals in each quarter-hour (an even spread would be 17% each).
+	measure 'Share of Normal-Time Goals' =
+			DIVIDE (
+			    [Normal-Time Goals],
+			    CALCULATE ( [Normal-Time Goals], REMOVEFILTERS ( 'Goal Minutes'[Quarter-hour], 'Goal Minutes'[Band Order] ) )
+			)
+		formatString: 0%
+		displayFolder: Goals
+
+	/// Reference line: one sixth of goals per quarter-hour.
+	measure 'Even Spread' = 1 / 6
+		formatString: 0%
+		displayFolder: Goals
+
+	/// Share of normal-time goals from the 76th minute on, including stoppage time.
+	measure 'Last 15 Minutes Share' =
+			DIVIDE (
+			    CALCULATE ( [Normal-Time Goals], 'Goal Minutes'[Band Order] = 6 ),
+			    [Normal-Time Goals]
+			)
+		formatString: 0%
+		displayFolder: Goals
+
+	/// Share of normal-time goals in the opening 15 minutes.
+	measure 'First 15 Minutes Share' = DIVIDE ( CALCULATE ( [Normal-Time Goals], 'Goal Minutes'[Band Order] = 1 ), [Normal-Time Goals] )
+		formatString: 0%
+		displayFolder: Goals
+
+	column tournament_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: tournament_id
+
+	column sex
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: sex
+
+	column minute_regulation
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: minute_regulation
+
+	column stoppage
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: stoppage
+
+	column period
+		dataType: string
+		summarizeBy: none
+		sourceColumn: period
+
+	column goals
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: goals
+
+	column year
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: year
+
+	column 'Quarter-hour'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Quarter-hour
+		sortByColumn: 'Band Order'
+
+	column 'Band Order'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: Band Order
+
+	column 'Normal Time'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Normal Time
+
+	partition 'Goal Minutes' = m
+		mode: import
+		source = ```
+				let
+				    Source = Csv.Document(
+				        Web.Contents(BaseUrl, [RelativePath = "goal_minutes.csv"]),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    // empty cells and R's NA arrive as text and would fail the type change: make them null
+				    #"Blanks to Null" = Table.TransformColumns(#"Promoted Headers", {}, each if _ = "" or _ = "NA" then null else _),
+				    // True/TRUE/true all become true: pandas writes True, R writes TRUE
+				    #"Booleans" = Table.TransformColumns(#"Blanks to Null", {{"stoppage", each if _ = null then null else Text.Lower(_)}}),
+				    #"Changed Types" = Table.TransformColumnTypes(
+				        #"Booleans",
+				        {
+				            {"tournament_id", type text},
+				            {"sex", type text},
+				            {"minute_regulation", Int64.Type},
+				            {"stoppage", type logical},
+				            {"period", type text},
+				            {"goals", Int64.Type},
+				            {"year", Int64.Type}
+				        },
+				        "en-US"
+				    ),
+				    #"Filtered Rows" = #"Changed Types",
+				    #"Band Order" = Table.AddColumn(#"Filtered Rows", "Band Order", each
+				        if [minute_regulation] > 90 then 7 else Number.RoundUp([minute_regulation] / 15), Int64.Type),
+				    #"Quarter-hour" = Table.AddColumn(#"Band Order", "Quarter-hour", each
+				        {"", "1-15'", "16-30'", "31-45+'", "46-60'", "61-75'", "76-90+'", "Extra time"}{[Band Order]}, type text),
+				    #"Normal Time" = Table.AddColumn(#"Quarter-hour", "Normal Time", each
+				        [period] = "first half" or [period] = "second half", type logical),
+				    Result = #"Normal Time"
+				in
+				    Result
+				```
+

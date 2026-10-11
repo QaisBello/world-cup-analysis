@@ -1,0 +1,7 @@
+relationship b8a163d3-3de8-5fb8-8517-e440e9d83ff8
+	fromColumn: 'Goal Minutes'.tournament_id
+	toColumn: Tournaments.tournament_id
+
+relationship 41fecb11-5c20-53c5-92b9-adfd05fb00db
+	fromColumn: Teams.tournament_id
+	toColumn: Tournaments.tournament_id

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "fefc3185868f5c9f9411",
+  "position": {
+    "x": 800,
+    "y": 184,
+    "z": 11,
+    "width": 456,
+    "height": 524,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tournaments"
+                    }
+                  },
+                  "Property": "Tournament"
+                }
+              },
+              "queryRef": "Tournaments.Tournament",
+              "nativeQueryRef": "Tournament"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tournaments"
+                    }
+                  },
+                  "Property": "host_country"
+                }
+              },
+              "queryRef": "Tournaments.host_country",
+              "nativeQueryRef": "host_country",
+              "displayName": "Host"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tournaments"
+                    }
+                  },
+                  "Property": "host_result"
+                }
+              },
+              "queryRef": "Tournaments.host_result",
+              "nativeQueryRef": "host_result",
+              "displayName": "Host finished"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tournaments"
+                    }
+                  },
+                  "Property": "winner"
+                }
+              },
+              "queryRef": "Tournaments.winner",
+              "nativeQueryRef": "winner",
+              "displayName": "Winner"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Tournaments"
+                  }
+                },
+                "Property": "Tournament"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Every host and how far it went'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
